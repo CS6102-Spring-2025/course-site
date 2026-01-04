@@ -1,0 +1,8 @@
+[book]
+title = "CS6102 Spring 2025-26"
+authors = ["belelaritra"]
+language = "en"
+
+[output.html]
+default-theme = "navy"
+preferred-dark-theme = "navy"
