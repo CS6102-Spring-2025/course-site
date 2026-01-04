@@ -1,9 +1,11 @@
 name: Deploy mdBook
 
+# Trigger workflow on push to main or manually
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,21 +15,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Install mdBook using GitHub Action
       - name: Install mdBook
-        run: |
-          curl -L https://github.com/rust-lang/mdBook/releases/latest/download/mdbook-linux-amd64.tar.gz \
-          | tar xz
-          sudo mv mdbook /usr/local/bin/
+        uses: rust-lang/mdBook@v0.5.10
 
+      # Build from src/
       - name: Build book
         run: mdbook build
 
+      # Deploy built book/ to gh-pages branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book
-
+          publish_branch: gh-pages
