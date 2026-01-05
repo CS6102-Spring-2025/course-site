@@ -12,17 +12,17 @@
 | **Lecture Slot** | 6 |
 | **Lecture Venue** | CC 101 |
 | **Lecture Schedule** | Wednesday and Friday, 11:05 AM – 12:30 PM |
-| **Piazza** | [Course Piazza Page](#) |
+| **Piazza** | [Course Piazza Page](https://piazza.com/iit_bombay/spring2026/cs6102) |
 | **Piazza Access Code** | `cs6102` |
 | **Instructor Office Hours** | After class or by prior email appointment |
 | **Teaching Assistants** | **[Shoaib Ahamed](https://www.cse.iitb.ac.in/~sgshoaibahamed/)** (24m2102 [at] iitb.ac.in)<br>**[Aritra Belel](https://www.cse.iitb.ac.in/~aritrabelel/)** (24m0814 [at] iitb.ac.in)<br><br>*Please use Piazza for general course-related queries.* |
 
----
+<!-- ---
 
 ## Course Outline
 
 The detailed course outline and reference material are available on the  
-[official course webpage](https://sites.google.com/view/sayandeepsaha/courses/implementation-security-in-cryptography).
+[official course webpage](https://sites.google.com/view/sayandeepsaha/courses/implementation-security-in-cryptography). -->
 
 ---
 ## Lecture Schedule (Tentative)
@@ -45,7 +45,6 @@ The detailed course outline and reference material are available on the
 - Fault injection attacks
 - Fault attack countermeasures
 - Advanced topics in implementation security
-- Student paper presentations
 
 ---
 
