@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "navy";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-935b6674.js";
+            window.path_to_searchindex_js = "searchindex-8f41ab24.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-512a7b4d.js"></script>
+        <script src="toc-6e82b9f8.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -238,19 +238,18 @@
 </div>
 <hr>
 <h2 id="grading-policy-tentative"><a class="header" href="#grading-policy-tentative">Grading Policy (Tentative)</a></h2>
-<ul>
-<li><strong>Programming Assignments:</strong> 30%<br><em>(Best 2 out of 3 assignments will be considered)</em></li>
-<li><strong>Quizzes:</strong> 15%<br><em>(Best 2 out of 3 quizzes will be considered)</em></li>
-<li><strong>Mid-Semester and End-Semester Examinations:</strong> 40%</li>
-<li><strong>Paper Presentation:</strong> 15%<br><em>(Individual or group; in-person presentation)</em></li>
-</ul>
-<h3 id="bonus-marks"><a class="header" href="#bonus-marks">Bonus Marks</a></h3>
-<ol>
-<li>Best presentation: <strong>+5</strong></li>
-<li>Best assignment submission: <strong>+5</strong></li>
-<li>Optional advanced coding assignment: <strong>up to +5</strong></li>
-<li>Constructive and actionable course feedback: <strong>+2</strong></li>
-</ol>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Component</th><th>Weight</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>Programming Assignments</td><td>30%</td><td>Best 2 out of 3 assignments will be considered</td></tr>
+<tr><td>Quizzes</td><td>30%</td><td>Best 2 out of 3 quizzes will be considered</td></tr>
+<tr><td>Mid-Semester and End-Semester Examinations</td><td>40%</td><td>-</td></tr>
+</tbody>
+</table>
+</div>
 <hr>
 <blockquote>
 <p><em>Note:</em> All schedules and policies are subject to revision during the semester.</p>
@@ -268,15 +267,280 @@
 <p>Assignment details will be released progressively as the course advances.</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
+<p>This section contains a curated set of resources to support learning the Verilog hardware description language.
+The material here is intended to complement lectures and assignments.</p>
 <hr>
-<p><strong>Coming Soon</strong></p>
-<p>Relevant resources will be added in alignment with the topics covered in the course.</p>
+<h2 id="verilog"><a class="header" href="#verilog">Verilog</a></h2>
+<p>The Verilog subsection introduces the Verilog hardware description language and covers fundamental concepts required to design and simulate digital circuits.</p>
+<p>Topics include:</p>
+<ul>
+<li><a href="#verilog-introduction">Verilog language overview</a></li>
+<li><a href="#data-types-in-verilog">Data types</a></li>
+<li><a href="#building-blocks-in-verilog">Core building blocks</a></li>
+<li><a href="#blocking--non-blocking-assignment">Blocking vs. non-blocking assignments</a></li>
+<li><a href="#conditional-statements">Conditional statements</a></li>
+<li><a href="#parameters">Parameters</a></li>
+</ul>
+<p>Authoritative external references:</p>
+<ul>
+<li><a href="https://asic-world.com/verilog/index.html">ASIC-World Verilog Tutorials</a></li>
+</ul>
+<blockquote>
+<p>Additional resources will be added as the course progresses.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="verilog-introduction"><a class="header" href="#verilog-introduction">Verilog Introduction</a></h1>
+<p><strong>Verilog</strong> is a <a href="https://en.wikipedia.org/wiki/Hardware_description_language"><strong>hardware description language (HDL)</strong></a> that’s the secret sauce behind digital design. It’s like our way of communicating with computer hardware directly. Imagine speaking in a language that chips and circuits understand – that’s what Verilog does. It’s been around for a while, evolving over time to become even more powerful and versatile.</p>
+<p>Back in the day, engineers used to draw designs on paper or use low-level languages to create digital circuits. But Verilog changed the game. It allowed them to describe designs at a higher level of abstraction, making it easier to visualize and create complex circuits. It’s like architects using blueprints to design a building instead of putting bricks together first.</p>
+<p>Over time, Verilog got more sophisticated. It started with modeling basic gates and simple circuits, but then it grew to handle bigger systems and more intricate designs. It became the backbone of modern digital systems, from processors in your computer to the chips in your phone. It’s like the language that helps engineers bring circuits to life.</p>
+<p>So, Verilog is not just about making computers understand us – it’s about unleashing our creativity to build smarter, faster, and more efficient digital systems. As technology evolves, Verilog continues to be at the forefront of shaping the digital world we live in today. And guess what? You’re about to dive into this world and experience the power of Verilog firsthand in this competition!</p>
+<hr>
+<blockquote>
+<p><strong>Guide:</strong> Read more about <strong>Verilog</strong> on <a href="https://asic-world.com/verilog/index.html"><strong>asic-world.com</strong></a></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="data-types-in-verilog"><a class="header" href="#data-types-in-verilog">Data Types in Verilog</a></h1>
+<p>In <strong>Verilog</strong>, there are several data types that you can use to represent different kinds of <strong>values</strong> and <strong>signals</strong>. These data types help in modeling hardware behavior as well as in writing simulation and verification code.</p>
+<hr>
+<h2 id="1-wire-wire"><a class="header" href="#1-wire-wire">1. Wire (<code>wire</code>)</a></h2>
+<p>Wires are used to represent <strong>continuous signals</strong>. They are commonly used for connecting different modules in a design and for carrying values between different parts of a circuit.</p>
+<pre><code class="language-verilog">wire a, b, result;
+</code></pre>
+<hr>
+<h2 id="2-reg-reg"><a class="header" href="#2-reg-reg">2. Reg (<code>reg</code>)</a></h2>
+<p>Despite the name, <code>reg</code> is used to store values that can be changed and is typically used in <strong>sequential logic</strong>. It is often used to store state information in sequential circuits.</p>
+<pre><code class="language-verilog">reg       flag;     // 1-bit register
+reg [3:0] counter;  // 4-bit register
+</code></pre>
+<hr>
+<h2 id="3-integer-integer"><a class="header" href="#3-integer-integer">3. Integer (<code>integer</code>)</a></h2>
+<p>Integers are used to store <strong>whole numbers</strong>. They are mainly used for tasks such as counting, indexing, and loop control, especially in testbench code.</p>
+<pre><code class="language-verilog">integer count;
+</code></pre>
+<hr>
+<h2 id="4-real-real"><a class="header" href="#4-real-real">4. Real (<code>real</code>)</a></h2>
+<p>The <code>real</code> data type is used to store <strong>floating-point numbers</strong>, including values with fractional parts. This data type is primarily used in simulation environments.</p>
+<pre><code class="language-verilog">real temperature;
+</code></pre>
+<hr>
+<h2 id="5-time-time"><a class="header" href="#5-time-time">5. Time (<code>time</code>)</a></h2>
+<p>The <code>time</code> data type is used to store <strong>time values</strong>. It is commonly used for modeling delays and timing behavior during simulation.</p>
+<pre><code class="language-verilog">time delay;
+</code></pre>
+<hr>
+<h2 id="6-bit-bit"><a class="header" href="#6-bit-bit">6. Bit (<code>bit</code>)</a></h2>
+<p>A <code>bit</code> represents a <strong>single binary digit</strong>, either <code>0</code> or <code>1</code>. It is the smallest data type used to represent one bit of information.</p>
+<pre><code class="language-verilog">bit flag;
+</code></pre>
+<hr>
+<h2 id="7-vector-n0-or-nm"><a class="header" href="#7-vector-n0-or-nm">7. Vector (<code>[N:0]</code> or <code>[N:M]</code>)</a></h2>
+<p>Vectors are used to represent <strong>groups of bits</strong>. They are commonly used to model multi-bit buses or signals, where <code>N</code> and <code>M</code> specify the range of indices.</p>
+<pre><code class="language-verilog">wire [7:0] data_bus;   // 8-bit data bus
+wire [2:0] control;    // 3-bit control signal
+</code></pre>
+<h4 id="splitting-a-16-bit-data-into-upper-and-lower-parts"><a class="header" href="#splitting-a-16-bit-data-into-upper-and-lower-parts">Splitting a 16-bit data into upper and lower parts</a></h4>
+<pre><code class="language-verilog">wire [15:8] upper_data;
+wire [7:0]  lower_data;
+</code></pre>
+<hr>
+<h2 id="8-arrays-n"><a class="header" href="#8-arrays-n">8. Arrays (<code>[N]</code>)</a></h2>
+<p>Arrays are used to store <strong>multiple values of the same data type</strong>. They are often used for modeling memory structures or collections of registers.</p>
+<pre><code class="language-verilog">reg [7:0] memory  [0:255];         // 1D Array
+reg [7:0] graph   [0:31][0:31];    // 2D Array
+</code></pre>
+<hr>
+<h2 id="9-strings-string"><a class="header" href="#9-strings-string">9. Strings (<code>string</code>)</a></h2>
+<p>Strings are used to represent <strong>sequences of characters</strong>. They are typically used for displaying messages or reporting information during simulation.</p>
+<pre><code class="language-verilog">string message = "Hello, Verilog!";
+reg [8*11:1] str = "Hello World";
+</code></pre>
+<hr>
+<h2 id="10-memory-reg-n0-mem-m"><a class="header" href="#10-memory-reg-n0-mem-m">10. Memory (<code>reg [N:0] mem [M]</code>)</a></h2>
+<p>Memory data types are used to <strong>model memory elements</strong>, where <code>N</code> represents the bit-width of each memory location and <code>M</code> represents the number of memory elements.</p>
+<pre><code class="language-verilog">reg [7:0] memory [255];  // 256-byte memory
+</code></pre>
+<hr>
+<blockquote>
+<p>These data types allow you to represent a wide range of values and signals within your Verilog designs.</p>
+</blockquote>
+<hr>
+<h1 id="which-data-type-to-use"><a class="header" href="#which-data-type-to-use">Which Data Type to Use?</a></h1>
+<p>All the data types mentioned above can be used in both hardware implementation and writing testbenches in Verilog. However, they serve different purposes depending on the context.</p>
+<hr>
+<h2 id="hardware-implementation"><a class="header" href="#hardware-implementation">Hardware Implementation</a></h2>
+<p>In hardware implementation, you describe the actual behavior of physical components. Data types such as <code>wire</code>, <code>reg</code>, vectors, and memory are used to model real hardware components, signals, and storage elements.</p>
+<p>For example, when designing digital circuits such as logic gates or sequential systems, these data types define how components interact and how the circuit behaves in real hardware.</p>
+<hr>
+<h2 id="testbenches"><a class="header" href="#testbenches">Testbenches</a></h2>
+<p>In testbenches, data types such as <code>integer</code>, <code>real</code>, and <code>time</code> are commonly used to model simulation-specific behavior. These data types are useful for generating test vectors, controlling simulation flow, and analyzing results.</p>
+<p>For example, integers can be used to count clock cycles, while real data types can be used to simulate timing or mathematical behavior. These data types do not represent physical hardware but are essential for effective verification and simulation.</p>
+<hr><div style="break-before: page; page-break-before: always;"></div>
+<h1 id="building-blocks-in-verilog"><a class="header" href="#building-blocks-in-verilog">Building Blocks in Verilog</a></h1>
+<p>Verilog provides several fundamental building blocks that allow designers to describe the structure and behavior of digital systems. These building blocks work together to define how hardware components are created, connected, and operated.</p>
+<hr>
+<h2 id="1-verilog-module"><a class="header" href="#1-verilog-module">1. Verilog <code>Module</code></a></h2>
+<p>A Verilog module is a self-contained unit that defines a specific functionality. It serves as a blueprint for creating instances of that functionality in your design. Modules <strong>encapsulate</strong> a set of logic, inputs, outputs, and potentially internal signals.</p>
+<pre><code class="language-verilog">module Adder (
+    input  [3:0] A,
+    input  [3:0] B,
+    output [4:0] Sum
+);
+
+    // Logic to implement addition
+
+endmodule
+</code></pre>
+<hr>
+<h2 id="2-verilog-port"><a class="header" href="#2-verilog-port">2. Verilog <code>Port</code></a></h2>
+<p>Ports are the communication interfaces of a Verilog module. They define how information flows in and out of the module. Ports can be <code>inputs</code>, <code>outputs</code>, or <code>bidirectional</code>, allowing modules to interact with other parts of the design.</p>
+<pre><code class="language-verilog">module Decoder (
+    input [2:0] Input,
+    output reg [7:0] Output
+);
+
+    // Logic to decode the input signals
+
+endmodule
+</code></pre>
+<hr>
+<h2 id="3-verilog-module-instantiations"><a class="header" href="#3-verilog-module-instantiations">3. Verilog Module Instantiations</a></h2>
+<p>Module instantiations are instances of a module created within another module. They allow you to use the functionality defined in one module inside another, enabling hierarchical and reusable design structures.</p>
+<pre><code class="language-verilog">module TopModule;
+    Adder   A1 (.A(inA), .B(inB), .Sum(sum));
+    Decoder D1 (.Input(selector), .Output(decodedOutput));
+endmodule
+</code></pre>
+<hr>
+<h2 id="4-verilog-assign-statements"><a class="header" href="#4-verilog-assign-statements">4. Verilog <code>Assign</code> Statements</a></h2>
+<p>The <code>assign</code> statement connects a source to a destination, creating a continuous assignment. It is used to connect wires or signals directly without using a procedural block, making it suitable for modeling <strong>combinational logic</strong>.</p>
+<pre><code class="language-verilog">assign Sum = A + B;
+</code></pre>
+<hr>
+<h2 id="5-verilog-always-block"><a class="header" href="#5-verilog-always-block">5. Verilog <code>Always</code> Block</a></h2>
+<p>The <code>always</code> block defines procedural logic that executes whenever the conditions specified within it are met. It is often used for <strong>sequential logic</strong> and state machines.</p>
+<pre><code class="language-verilog">always @(posedge clock) begin
+    if (reset) state &lt;= IDLE;
+    else state &lt;= next_state;
+end
+</code></pre>
+<p>In an <code>always</code> block triggered by a clock signal, the logic statements are executed at each positive edge of the clock.</p>
+<hr>
+<h2 id="6-verilog-initial-block"><a class="header" href="#6-verilog-initial-block">6. Verilog <code>Initial</code> Block</a></h2>
+<p>The <code>initial</code> block contains procedural code that is executed only once at the start of simulation. It is commonly used for <strong>setting initial values</strong> or performing setup tasks, especially in testbenches.</p>
+<pre><code class="language-verilog">initial begin
+    clk = 0;
+    reset = 1;
+
+    // Other initialization tasks
+    
+end
+</code></pre>
+<hr>
+<p>These building blocks collectively allow you to create complex digital designs by defining the structure, behavior, and interactions of different components in your Verilog code.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="blocking--non-blocking-assignment"><a class="header" href="#blocking--non-blocking-assignment">Blocking &amp; Non-blocking Assignment</a></h1>
+<p>Blocking and Non-blocking assignments controls the execution order within <code>initial</code> and <code>always</code> block statements. <strong>Blocking assignments</strong> are assigned using <strong><code>=</code></strong> and <strong>Non-blocking</strong> assignments using <strong><code>&lt;=</code></strong>. Both these assignments are used to generate combination or sequential logic.</p>
+<hr>
+<h2 id="blocking-assignment"><a class="header" href="#blocking-assignment">Blocking Assignment</a></h2>
+<p>In the <code>always</code> block below, the Blocking Assignment is used. In this example, the value <code>1</code> will immediately propagate to <code>r_Test_3</code>. The Blocking assignment immediately takes the value in the right-hand-side and assigns it to the left hand side.</p>
+<p>Blocking assignments literally block the execution of the next statement until the current statement is executed.</p>
+<pre><code class="language-verilog">always @(posedge clk) begin
+    r_Test_1 = 1;
+    r_Test_2 = r_Test_1;
+    r_Test_3 = r_Test_2;
+end
+</code></pre>
+<hr>
+<h2 id="non-blocking-assignment"><a class="header" href="#non-blocking-assignment">Non-blocking Assignment</a></h2>
+<p>The <code>always</code> block in the Verilog code below uses the Non-blocking Assignment. It will take three clock cycles for the value <code>1</code> to propagate from <code>r_Test_1</code> to <code>r_Test_3</code>. Now consider this code:</p>
+<pre><code class="language-verilog">always @(posedge clk) begin
+    r_Test_1 &lt;= 1;
+    r_Test_2 &lt;= r_Test_1;
+    r_Test_3 &lt;= r_Test_2;
+end
+</code></pre>
+<p>It results in simultaneous or parallel statements execution. You can schedule assignments using non-blocking statements so that the procedural flow is not interrupted. Anytime you want to assign many registers in the same time step without respect to their order or dependence on one another, you can use the non-blocking procedural statement.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="conditional-statements"><a class="header" href="#conditional-statements">Conditional Statements</a></h1>
+<p>The conditional statements are used to determine whether a particular statement should be executed or not. Control statements in Verilog are similar to control statements in C.</p>
+<hr>
+<h2 id="if-else"><a class="header" href="#if-else">if-else</a></h2>
+<p>If the expression in the <code>if</code> condition is true, then the statements inside the <code>if</code> condition will be executed. If it is false, the statements inside the <code>else</code> condition will be executed.</p>
+<hr>
+<h3 id="syntax"><a class="header" href="#syntax">Syntax</a></h3>
+<pre><code class="language-verilog">if (expression)
+    [statement]
+else
+    [statement]
+</code></pre>
+<hr>
+<h2 id="if-else-with-multiple-statements"><a class="header" href="#if-else-with-multiple-statements">if-else with Multiple Statements</a></h2>
+<p>For multiple statements, the <code>begin</code> and <code>end</code> keywords are used.</p>
+<pre><code class="language-verilog">if (expression) begin
+    [multiple statements]
+end
+else begin
+    [multiple statements]
+end
+</code></pre>
+<hr>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<pre><code class="language-verilog">if (a &gt; b) begin
+    max = a;
+end
+else begin
+    max = b;
+end
+</code></pre>
+<hr>
+<p>Similar to C, it is possible to have nested <code>if</code> statements in Verilog.</p>
+<hr>
+<h2 id="conditional-operator"><a class="header" href="#conditional-operator">Conditional Operator</a></h2>
+<p>You can assign a value based on a condition by using the conditional operator.</p>
+<hr>
+<h3 id="syntax-1"><a class="header" href="#syntax-1">Syntax</a></h3>
+<pre><code class="language-verilog">variable = &lt;condition&gt; ? &lt;expression1&gt; : &lt;expression2&gt;;
+</code></pre>
+<p>If the condition is true, <code>expression1</code> is assigned to the variable, or else <code>expression2</code> is assigned to the variable.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="parameters"><a class="header" href="#parameters">Parameters</a></h1>
+<p>Parameters in Verilog are nothing but a way to instantiate constants in the digital design.</p>
+<p>A parameter is local to a module, but it can change value when the module is instantiated. It is used to define a property of the module.</p>
+<hr>
+<h2 id="syntax-2"><a class="header" href="#syntax-2">Syntax</a></h2>
+<pre><code class="language-verilog">parameter &lt;parameter_name&gt; = &lt;constant_expression&gt;;
+</code></pre>
+<hr>
+<h2 id="example-1"><a class="header" href="#example-1">Example</a></h2>
+<pre><code class="language-verilog">parameter size = 4;
+parameter clk  = freq / 2;
+</code></pre>
+<p>This property can be left to default, or it can be modified at instantiation of the module.</p>
+<p>By default, the adder is 8-bit (the width parameter uses the default assigned value of 8). However, the instantiator module can change the parameter value.</p>
+<hr>
+<h2 id="local-parameter"><a class="header" href="#local-parameter">Local Parameter</a></h2>
+<p>A local parameter (<code>localparam</code>) is also used to store constants in the digital design, but the constant</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="changelog"><a class="header" href="#changelog">Changelog</a></h1>
+<p>This changelog records all official updates to course content, assignments, resources, lecture slides, installation instructions, and grading policy. Updates are listed chronologically.</p>
 <hr>
-<p><strong>Coming Soon</strong></p>
-<p>Updates and revisions to the course content will be recorded here.</p>
-
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Date</th><th>Type</th><th>Update</th></tr>
+</thead>
+<tbody>
+<tr><td>04/01/2026</td><td>Setup</td><td>Course site created</td></tr>
+<tr><td>05/01/2026</td><td>Resource</td><td>Verilog resources added to Resources section</td></tr>
+<tr><td>TBD</td><td>Installation</td><td>Installation instructions for software/tools will be added</td></tr>
+</tbody>
+</table>
+</div>
+<!-- | TBD        | Assignment  | Assignment 1 details to be published |
+| TBD        | Slides      | Lecture slides for Weeks 1–2 will be uploaded |
+| TBD        | Grading     | Grading policy updates or corrections will be posted |
+| TBD        | Resource    | Additional reference materials and readings will be added | -->
+<hr>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

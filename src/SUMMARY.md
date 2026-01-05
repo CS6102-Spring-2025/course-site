@@ -3,5 +3,11 @@
 - [Installation](installation.md)
 - [Assignments](assignments.md)
 - [Resources](resources.md)
+  - [Verilog](verilog/README.md)
+    - [Data Types](verilog/data-type.md)
+    - [Building Blocks](verilog/building-block.md)
+    - [Blocking vs Non-Blocking](verilog/blocking-nonblocking.md)
+    - [Conditional Statements](verilog/conditional-statements.md)
+    - [Parameters](verilog/parameters.md)
 - [Changelog](changelog.md)
 

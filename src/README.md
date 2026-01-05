@@ -58,20 +58,12 @@ The detailed course outline and reference material are available on the
 ---
 ## Grading Policy (Tentative)
 
-- **Programming Assignments:** 30%  
-  *(Best 2 out of 3 assignments will be considered)*
-- **Quizzes:** 15%  
-  *(Best 2 out of 3 quizzes will be considered)*
-- **Mid-Semester and End-Semester Examinations:** 40%
-- **Paper Presentation:** 15%  
-  *(Individual or group; in-person presentation)*
+| Component                                  | Weight | Notes |
+|--------------------------------------------|--------|-------|
+| Programming Assignments                     | 30%    | Best 2 out of 3 assignments will be considered |
+| Quizzes                                     | 30%    | Best 2 out of 3 quizzes will be considered |
+| Mid-Semester and End-Semester Examinations | 40%    | - |
 
-### Bonus Marks
-
-1. Best presentation: **+5**
-2. Best assignment submission: **+5**
-3. Optional advanced coding assignment: **up to +5**
-4. Constructive and actionable course feedback: **+2**
 
 ---
 
