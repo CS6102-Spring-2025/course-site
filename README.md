@@ -24,7 +24,7 @@ It is automatically built and deployed whenever updates are made to the reposito
 | **Piazza** | [Course Piazza Page](#) |
 | **Piazza Access Code** | cs6102 |
 | **Instructor Office Hours** | After class or by prior email appointment |
-| **Teaching Assistants** | Shoaib Ahamed (24m2102 [at] iitb.ac.in)<br>Aritra Belel (24m0814 [at] iitb.ac.in) |
+| **Teaching Assistants** | Shoaib Ahamed (24m2102 [at] iitb.ac.in)<br>Aritra Belel (24m0814 [at] iitb.ac.in)<br>Keyaan Kartikeya Rajesh (24b0977 [at] iitb.ac.in) |
 
 > Please use Piazza for general course-related queries.
 

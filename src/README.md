@@ -15,7 +15,7 @@
 | **Piazza** | [Course Piazza Page](https://piazza.com/iit_bombay/spring2026/cs6102) |
 | **Piazza Access Code** | `cs6102` |
 | **Instructor Office Hours** | After class or by prior email appointment |
-| **Teaching Assistants** | **[Shoaib Ahamed](https://www.cse.iitb.ac.in/~sgshoaibahamed/)** (24m2102 [at] iitb.ac.in)<br>**[Aritra Belel](https://www.cse.iitb.ac.in/~aritrabelel/)** (24m0814 [at] iitb.ac.in)<br><br>*Please use Piazza for general course-related queries.* |
+| **Teaching Assistants** | **[Shoaib Ahamed](https://www.cse.iitb.ac.in/~sgshoaibahamed/)** (24m2102 [at] iitb.ac.in)<br>**[Aritra Belel](https://www.cse.iitb.ac.in/~aritrabelel/)** (24m0814 [at] iitb.ac.in)<br>**[Keyaan Kartikeya Rajesh](https://www.cse.iitb.ac.in/~keyaan/)** (24b0977 [at] iitb.ac.in)<br><br>*Please use Piazza for general course-related queries.* |
 
 <!-- ---
 
