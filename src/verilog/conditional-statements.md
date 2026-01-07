@@ -37,16 +37,12 @@ end
 ---
 
 ### Example
-
 ```verilog
-if (a > b) begin
-    max = a;
-end
-else begin
-    max = b;
+always @(posedge clock) begin
+   if (reset) state <= IDLE;
+   else state <= next_state;
 end
 ```
-
 ---
 
 Similar to C, it is possible to have nested `if` statements in Verilog.

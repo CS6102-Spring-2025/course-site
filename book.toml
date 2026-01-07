@@ -1,8 +1,26 @@
 [book]
-title = "CS6102 Spring 2025-26"
-authors = ["belelaritra"]
+title = "CS6102 Spring 2025–26"
+authors = ["Aritra Belel"]
 language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+create-missing = false
 
 [output.html]
 default-theme = "navy"
 preferred-dark-theme = "navy"
+no-section-label = true
+mathjax-support = true
+
+[output.html.playground]
+copyable = true
+line-numbers = true
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.print]
+enable = false

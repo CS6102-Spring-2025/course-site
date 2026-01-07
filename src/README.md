@@ -25,6 +25,7 @@ The detailed course outline and reference material are available on the
 [official course webpage](https://sites.google.com/view/sayandeepsaha/courses/implementation-security-in-cryptography). -->
 
 ---
+
 ## Lecture Schedule (Tentative)
 
 ### Weeks 1–2: Foundations and Motivation
@@ -52,7 +53,7 @@ The detailed course outline and reference material are available on the
 
 | Date | Lecture Topic | Prerequisites | Lecture Slides | Reading Material |
 |---|---|---|---|---|
-| Jan 07 | Course Prelude and Introduction | – | – | – |
+| Jan 07 | Course Prelude and Introduction | – | [Lecture 01: Welcome!! ](slides/ISC_lec1.pdf)  | – |
 
 ---
 ## Grading Policy (Tentative)

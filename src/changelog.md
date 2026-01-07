@@ -1,16 +1,22 @@
 # Changelog
 
-This changelog records all official updates to course content, assignments, resources, lecture slides, installation instructions, and grading policy. Updates are listed chronologically.
+This changelog records all **official updates** to the course website, including course content, lecture slides, assignments, resources, installation instructions, and grading policy.  
+Updates are listed in **reverse chronological order**.
 
 ---
-| Date       | Type        | Update |
-|------------|------------|--------|
-| 04/01/2026 | Setup       | Course site created|
-| 05/01/2026 | Resource    | Verilog resources added to Resources section |
-| TBD        | Installation | Installation instructions for software/tools will be added |
 
-<!-- | TBD        | Assignment  | Assignment 1 details to be published |
-| TBD        | Slides      | Lecture slides for Weeks 1–2 will be uploaded |
-| TBD        | Grading     | Grading policy updates or corrections will be posted |
-| TBD        | Resource    | Additional reference materials and readings will be added | -->
+| Date       | Type     | Update |
+|------------|----------|--------|
+| 07/01/2026 | Slides   | [Lecture 01 (Introduction)](slides/ISC_lec1.pdf) slides uploaded |
+| 05/01/2026 | Resource | Verilog resources added to the [Resources](resources.html) section |
+| 04/01/2026 | Setup    | Course website initialized and deployed |
+
 ---
+
+<!--
+| TBD | Installation | Installation instructions for required software and tools will be added |
+| TBD | Assignment   | Assignment 1 details to be published |
+| TBD | Slides       | Lecture slides for subsequent weeks will be uploaded |
+| TBD | Grading      | Updates or clarifications to the grading policy will be posted |
+| TBD | Resource     | Additional reference materials and readings will be added |
+-->
