@@ -51,9 +51,11 @@ The detailed course outline and reference material are available on the
 
 ## Detailed Lecture Plan
 
-| Date | Lecture Topic | Prerequisites | Lecture Slides | Reading Material |
-|---|---|---|---|---|
-| Jan 07 | Course Prelude and Introduction | – | [Lecture 01: Welcome!! ](slides/ISC_lec1.pdf)  | – |
+| Date | Lecture Topic | Prerequisites | Lecture Slides | Lecture video | Reading Material |
+|---|---|---|---|---|---|
+| Jan 07 | Course Prelude and Introduction | – | [Lecture 01-slides ](slides/ISC_lec1.pdf) | [lecture 1 video](https://youtu.be/5agBRN75GPk?si=25lxIxpa3wNH1xJq)  | – |
+| Jan 09 | Some basics and Perfect Secrecy | – | [Lecture 02-slides ](slides/ISC_lec2.pdf) | [lecture 2 video]()  | – |
+| Jan 14 | Computational secrecy and block ciphers | Lec 2 | [Lecture 03-slides](slides/ISC_lec3.pdf) | [lecture 3 video]()  | – |
 
 ---
 ## Grading Policy (Tentative)
