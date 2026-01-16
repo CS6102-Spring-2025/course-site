@@ -49,13 +49,23 @@ The detailed course outline and reference material are available on the
 
 ---
 
-## Detailed Lecture Plan
+<!-- ## Detailed Lecture Plan
 
 | Date | Lecture Topic | Prerequisites | Lecture Slides | Lecture video | Reading Material |
 |---|---|---|---|---|---|
 | Jan 07 | Course Prelude and Introduction | – | [Lecture 01-slides ](slides/ISC_lec1.pdf) | [lecture 1 video](https://youtu.be/5agBRN75GPk?si=25lxIxpa3wNH1xJq)  | – |
 | Jan 09 | Some basics and Perfect Secrecy | – | [Lecture 02-slides ](slides/ISC_lec2.pdf) | [lecture 2 video]()  | – |
-| Jan 14 | Computational secrecy and block ciphers | Lec 2 | [Lecture 03-slides](slides/ISC_lec3.pdf) | [lecture 3 video](https://youtu.be/65B3pzsPMFk)  | – |
+| Jan 14 | Computational secrecy and block ciphers | Lec 2 | [Lecture 03-slides](slides/ISC_lec3.pdf) | [lecture 3 video](https://youtu.be/65B3pzsPMFk)  | – | -->
+
+## Detailed Lecture Plan
+
+| Date | Topic | Prerequisites | Slides | YouTube Video | Reading / References |
+|------|-------|---------------|--------|-------|----------------------|
+| Jan 07 | Course Prelude and Introduction | — | [Lecture 01](slides/ISC_lec1.pdf) | [Video](https://youtu.be/5agBRN75GPk?si=25lxIxpa3wNH1xJq) | — |
+| Jan 09 | Fundamentals and Perfect Secrecy | — | [Lecture 02](slides/ISC_lec2.pdf) | Video (TBA) | — |
+| Jan 14 | Computational Secrecy and Block Ciphers | Lecture 2 | [Lecture 03](slides/ISC_lec3.pdf) | [Video](https://youtu.be/65B3pzsPMFk) | — |
+| Jan 16 | Hardware Design Using Verilog | Basics of digital logic (MUX, flip-flops, registers, etc.) — see [Resources](resources.md#verilog) | [Lecture 04](slides/Lec4_Hardware_Design_using_Verilog%202.pdf) | [Video](https://youtu.be/4s_JIQ2wqL8) | [ASIC World: Verilog HDL](https://asic-world.com/verilog/index.html) |
+
 
 ---
 ## Grading Policy (Tentative)

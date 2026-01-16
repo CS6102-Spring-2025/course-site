@@ -7,6 +7,9 @@ Updates are listed in **reverse chronological order**.
 
 | Date       | Type     | Update |
 |------------|----------|--------|
+| 16/01/2026 | Slides   | [Lecture 04 (Hardware Design Using Verilog)](slides/Lec4_Hardware_Design_using_Verilog%202.pdf) slides added |
+| 16/01/2026 | Slides   | [Lecture 03 (Computational Secrecy and Block Ciphers)](slides/ISC_lec3.pdf) slides added |
+| 16/01/2026 | Slides   | [Lecture 02 (Fundamentals and Perfect Secrecy)](slides/ISC_lec2.pdf) slides added |
 | 07/01/2026 | Slides   | [Lecture 01 (Introduction)](slides/ISC_lec1.pdf) slides uploaded |
 | 05/01/2026 | Resource | Verilog resources added to the [Resources](resources.html) section |
 | 04/01/2026 | Setup    | Course website initialized and deployed |
