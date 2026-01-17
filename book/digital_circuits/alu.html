@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Blocking vs Non-Blocking - CS6102 Spring 2025–26</title>
+        <title>ALU - CS6102 Spring 2025–26</title>
 
 
         <!-- Custom HTML head -->
@@ -172,38 +172,123 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="blocking--non-blocking-assignment"><a class="header" href="#blocking--non-blocking-assignment">Blocking &amp; Non-blocking Assignment</a></h1>
-<p>Blocking and Non-blocking assignments controls the execution order within <code>initial</code> and <code>always</code> block statements. <strong>Blocking assignments</strong> are assigned using <strong><code>=</code></strong> and <strong>Non-blocking</strong> assignments using <strong><code>&lt;=</code></strong>. Both these assignments are used to generate combination or sequential logic.</p>
-<hr>
-<h2 id="blocking-assignment"><a class="header" href="#blocking-assignment">Blocking Assignment</a></h2>
-<p>In the <code>always</code> block below, the Blocking Assignment is used. In this example, the value <code>1</code> will immediately propagate to <code>r_Test_3</code>. The Blocking assignment immediately takes the value in the right-hand-side and assigns it to the left hand side.</p>
-<p>Blocking assignments literally block the execution of the next statement until the current statement is executed.</p>
-<pre><code class="language-verilog">always @(posedge clk) begin
-    r_Test_1 = 1;
-    r_Test_2 = r_Test_1;
-    r_Test_3 = r_Test_2;
-end
-</code></pre>
-<hr>
-<h2 id="non-blocking-assignment"><a class="header" href="#non-blocking-assignment">Non-blocking Assignment</a></h2>
-<p>The <code>always</code> block in the Verilog code below uses the Non-blocking Assignment. It will take three clock cycles for the value <code>1</code> to propagate from <code>r_Test_1</code> to <code>r_Test_3</code>. Now consider this code:</p>
-<pre><code class="language-verilog">always @(posedge clk) begin
-    r_Test_1 &lt;= 1;
-    r_Test_2 &lt;= r_Test_1;
-    r_Test_3 &lt;= r_Test_2;
-end
-</code></pre>
-<p>It results in simultaneous or parallel statements execution. You can schedule assignments using non-blocking statements so that the procedural flow is not interrupted. Anytime you want to assign many registers in the same time step without respect to their order or dependence on one another, you can use the non-blocking procedural statement.</p>
+                        <center>
+    
+<h1>8-bit Arithmetic Logic Unit</h1>
 
+</center>
+<hr>
+<p><strong>Problem Statement:</strong> Design and simulate a 8-bit ALU.</p>
+<hr>
+<h3 id="introduction-to-alu"><a class="header" href="#introduction-to-alu">Introduction to ALU</a></h3>
+<div align="justify">An arithmetic logic unit (ALU) is a digital circuit used to perform arithmetic and logic operations. It represents the fundamental building block of the central processing unit (CPU) of a computer. Modern CPUs contain very powerful and complex ALUs. In addition to ALUs, modern CPUs contain a control unit (CU).</div>
+<br />
+<div align="justify">Most of the operations of a CPU are performed by one or more ALUs, which load data from input registers. A register is a small amount of storage available as part of a CPU. The control unit tells the ALU what operation to perform on that data, and the ALU stores the result in an output register. The control unit moves the data between these registers, the ALU, and memory.</div>
+<br />
+<div align="center">
+  <img width="400" height="400" src="https://raw.githubusercontent.com/kalindkaria/mdbook-assets/main/cs6102_spring2024-25/resources/digital_circuits/alu/alu_block_diag.png">
+</div>
+
+<!-- <div align="center">Figure 1: Block Diagram of 8bit ALU</div><br /> -->
+<div align="justify">Here, we will design an 8-bit ALU which performs different set of arithmetic and logical operations based on the select input <b>s</b>.</div>
+
+<h3 id="implementation-table-of-8-bit-alu"><a class="header" href="#implementation-table-of-8-bit-alu">Implementation Table of 8-bit ALU</a></h3>
+<div align="justify">The below table indicates the Arithmetic and Logical operations performed based on the select input <b>s</b> and also the output <b>y</b> obtained for for the given set of input <b>a</b> and <b>b</b>. This ALU is designed using arithmetic and logical operations mentioned in the table below.</div>
+<br />
+<div align="center">
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">Arithmetic Operations</th><th style="text-align: center">Logical Operations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">Addition</td><td style="text-align: center">Bitwise AND &amp; NAND</td></tr>
+<tr><td style="text-align: center">Subtraction</td><td style="text-align: center">Bitwise OR &amp; NOR</td></tr>
+<tr><td style="text-align: center">Multiplication</td><td style="text-align: center">Bitwise NOR &amp; XNOR</td></tr>
+<tr><td style="text-align: center">Division</td><td style="text-align: center">Shift Right &amp; Shift Left</td></tr>
+<tr><td style="text-align: center">Increment</td><td style="text-align: center">Rotate Right &amp; Rotate Left</td></tr>
+<tr><td style="text-align: center">Decrement</td><td style="text-align: center"></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<br />
+<div align="center"><b>Table 1: Implementation Table of 8-bit ALU</b></div>
+
+<div align="center">
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>s</th><th>operation</th><th>a</th><th>b</th><th>y</th><th>carry</th><th>zero</th></tr>
+</thead>
+<tbody>
+<tr><td>0000</td><td>Addition</td><td>11101110</td><td>11101110</td><td>00000000 11011100</td><td>1</td><td>0</td></tr>
+<tr><td>0001</td><td>Subtraction</td><td>11101110</td><td>11101110</td><td>00000000 00000000</td><td>0</td><td>1</td></tr>
+<tr><td>0010</td><td>Increment</td><td>11101110</td><td>11101110</td><td>00000000 11101111</td><td>0</td><td>0</td></tr>
+<tr><td>0011</td><td>Decrement</td><td>11101110</td><td>11101110</td><td>00000000 11101101</td><td>0</td><td>0</td></tr>
+<tr><td>0100</td><td>Multiplication</td><td>11101110</td><td>11101110</td><td>11011101 01000100</td><td>0</td><td>0</td></tr>
+<tr><td>0101</td><td>Division</td><td>11101110</td><td>11101110</td><td>00000000 00000001</td><td>0</td><td>0</td></tr>
+<tr><td>0110</td><td>Bitwise AND</td><td>11101110</td><td>11101110</td><td>00000000 11101110</td><td>0</td><td>0</td></tr>
+<tr><td>0111</td><td>Bitwise OR</td><td>11101110</td><td>11101110</td><td>00000000 11101110</td><td>0</td><td>0</td></tr>
+<tr><td>1000</td><td>Bitwise XOR</td><td>11101110</td><td>11101110</td><td>00000000 00000000</td><td>0</td><td>1</td></tr>
+<tr><td>1001</td><td>Bitwise NAND</td><td>11101110</td><td>11101110</td><td>00000000 00010001</td><td>0</td><td>0</td></tr>
+<tr><td>1010</td><td>Bitwise NOR</td><td>11101110</td><td>11101110</td><td>00000000 00010001</td><td>0</td><td>0</td></tr>
+<tr><td>1011</td><td>Bitwise XNOR</td><td>11101110</td><td>11101110</td><td>00000000 11111111</td><td>0</td><td>0</td></tr>
+<tr><td>1100</td><td>Shift Left</td><td>11101110</td><td>11101110</td><td>00000000 11011100</td><td>1</td><td>0</td></tr>
+<tr><td>1101</td><td>Shift Right</td><td>11101110</td><td>11101110</td><td>00000000 01110111</td><td>0</td><td>0</td></tr>
+<tr><td>1110</td><td>Rotate Right</td><td>11101110</td><td>11101110</td><td>00000000 01110111</td><td>0</td><td>0</td></tr>
+<tr><td>1111</td><td>Rotate Left</td><td>11101110</td><td>11101110</td><td>00000000 11011101</td><td>0</td><td>0</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<br />
+<h3 id="implementation-of-8-bit-alu"><a class="header" href="#implementation-of-8-bit-alu">Implementation of 8-bit ALU</a></h3>
+<p>To implement 8-bit ALU design, follow these steps.</p>
+<ol>
+<li>
+<p>Create a new Verilog file and start writing code for 8-bit ALU as given below and save the file. Keep the file name as <strong>ALU</strong>.</p>
+ <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&amp;t=seti&amp;wt=none&amp;l=verilog&amp;width=680&amp;ds=true&amp;dsyoff=0px&amp;dsblur=0px&amp;wc=false&amp;wa=true&amp;pv=9px&amp;ph=9px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%252F%252F%2520Verilog%2520design%2520for%2520a%25208-bit%2520ALU%250A%252F%252F%2520define%2520module%250Amodule%2520ALU%2520%28%250A%2520%2520%2509input%2520clk%252C%2520en%252C%2520%2520%2520%252F%252F%2520define%2520clock%2520and%2520enable%2520%28active%2520low%29%2520signal%250A%2520%2520%2520%2520input%2520%255B7%253A0%255D%2520a%252C%2520b%252C%250A%2520%2520%2509input%2520%255B3%253A0%255D%2520s%252C%2520%2520%2520%252F%252F%2520define%2520inputs%2520a%252C%2520b%2520and%2520select%2520line%2520input%2520s%250A%2520%2520%2509output%2520reg%2520%255B15%253A0%255D%2520y%252C%2520%252F%252F%2520define%252016%2520bit%2520ALU%2520output%250A%2520%2520%2520%2520output%2520reg%2520carry%2520%252C%2520zero%2520%252F%252F%2520define%2520flag%2520output%250A%29%253B%250A%250Areg%2520%255B7%253A0%255D%2520a_in%252C%2520b_in%253B%2520%252F%252F%2520local%2520registers%2520for%2520input%2520%27a%27%2520and%2520%27b%27%250A%250A%252F*%2520local%2520register%2520to%2520store%2520carry%2520bit%2520in%2520flags%2520%255B0%255D%2520%2526%250Azero%2520flag%2520bit%2520in%2520flags%2520%255B1%255D%2520*%252F%250Areg%2520%255B1%253A0%255D%2520flags%253B%250A%250Areg%2520%255B15%253A0%255D%2520out_y%253B%2520%252F%252F%2520local%2520register%2520to%2520store%252016%2520bit%2520output%2520%27y%27%250A%250Ainitial%2520begin%250A%2520%2520%2520%2520y%2520%253D%25200%253B%2520carry%2520%253D%25200%253B%2520zero%2520%253D%25200%253B%250Aend%250A%250A%252F%252F%2520datapath%2520design%250Aalways%2520%2540%28posedge%2520clk%252C%2520posedge%2520en%29%2520begin%250A%2520%2520%2520%2520%252F%252F%2520if%2520en%2520%253D%25201%252C%2520reset%2520all%2520outputs%250A%2520%2520%2520%2520if%2520%28en%29%2520begin%250A%2520%2520%2520%2520%2520%2520%2520%2520a_in%2520%253C%253D%25200%253B%2520b_in%2520%253C%253D%25200%253B%2520y%2520%253C%253D%25200%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520carry%2520%253C%253D%25200%253B%2520zero%2520%253C%253D%25200%253B%250A%2520%2520%2520%2520end%250A%2520%2520%2520%2520else%2520begin%2520%252F%252F%2520if%2520en%2520%253D%25200%252C%2520latch%2520all%2520output%2520flip%2520flops%250A%2520%2520%2520%2520%2520%2520%2520%2520a_in%2520%253C%253D%2520a%253B%2520b_in%2520%253C%253D%2520b%253B%2520y%2520%253C%253D%2520out_y%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520carry%2520%253C%253D%2520flags%2520%255B0%255D%253B%2520zero%2520%253C%253D%2520flags%2520%255B1%255D%253B%250A%2520%2520%2520%2520end%250Aend%250A%250A%252F%252F%2520controller%2520design%250Aalways%2520%2540%28a_in%252C%2520b_in%252C%2520s%29%2520begin%250A%2520%2520flags%2520%253D%25202%27b00%253B%250A%2520%2520case%2520%28s%29%250A%2520%2520%2520%25204%27d0%253A%2520begin%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520%252B%2520b_in%2520%29%257D%253B%2520%252F%252F%2520addition%250A%2520%2520%2520%2520%2520%2520flags%2520%255B0%255D%2520%253D%2520out_y%2520%255B8%255D%2520%253B%2520%252F%252F%2520carry%2520is%2520set%2520if%2520generated%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d1%253A%2520begin%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520-%2520b_in%2520%29%257D%253B%2520%252F%252F%2520subtraction%250A%2520%2520%2520%2520%2520%2520flags%2520%255B0%255D%2520%253D%2520out_y%255B8%255D%2520%253B%2520%252F%252F%2520carry%2520is%2520set%2520if%2520borrow%2520is%2520taken%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d2%253A%2520begin%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%2520%252C%28a_in%2520%252B%25201%27b1%29%257D%253B%2520%252F%252F%2520increment%250A%2520%2520%2520%2520%2520%2520flags%2520%255B0%255D%2520%253D%2520out_y%255B8%255D%253B%2520%252F%252F%2520carry%2520is%2520set%2520if%2520generated%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d3%253A%2520begin%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28a_in%2520-%25201%27b1%29%257D%253B%2520%252F%252F%2520decrement%250A%2520%2520%2520%2520%2520%2520flags%255B0%255D%2520%253D%2520out_y%255B8%255D%253B%2520%252F%252F%2520carry%2520is%2520set%2520if%2520borrow%2520is%2520taken%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d4%253A%2520%2520out_y%2520%253D%2520%28%2520a_in%2520*%2520b_in%2520%29%253B%2520%252F%252F%2520multiplication%250A%2520%2520%2520%25204%27d5%253A%2520%2520out_y%2520%253D%2520%28%2520a_in%2520%252F%2520b_in%2520%29%253B%2520%252F%252F%2520division%250A%2520%2520%2520%25204%27d6%253A%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520%2526%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520AND%250A%2520%2520%2520%25204%27d7%253A%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520%257C%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520OR%250A%2520%2520%2520%25204%27d8%253A%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520%255E%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520XOR%250A%2520%2520%2520%25204%27d9%253A%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%7E%28%2520a_in%2520%2526%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520NAND%250A%2520%2520%2520%25204%27d10%253A%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%7E%28%2520a_in%2520%257C%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520NOR%250A%2520%2520%2520%25204%27d11%253A%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%7E%28%2520a_in%2520%255E%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520XNOR%250A%2520%2520%2520%25204%27d12%253A%2520begin%250A%2520%2520%2520%2520%2520%2520flags%255B0%255D%2520%253D%2520a_in%255B7%255D%253B%2520%252F%252F%2520update%2520carry%2520flag%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%2520%252C%2520%28a_in%2520%253C%253C%25201%29%257D%253B%2520%252F%252F%2520shift%2520left%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d13%253A%2520begin%250A%2520%2520%2520%2520%2520%2520flags%255B0%255D%2520%253D%2520a_in%255B0%255D%2520%253B%2520%252F%252F%2520update%2520carry%2520flag%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28a_in%2520%253E%253E%25201%29%257D%253B%2520%252F%252F%2520shift%2520right%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d14%253A%2520out_y%2520%253D%2520%257B8%27d0%252C%2520a_in%2520%255B0%255D%252C%2520a_in%2520%255B7%253A1%255D%257D%253B%2520%252F%252F%2520right%2520rotate%250A%2520%2520%2520%25204%27d15%253A%2520out_y%2520%253D%2520%257B8%27d0%252C%2520a_in%2520%255B6%253A0%255D%252C%2520a_in%255B7%255D%257D%253B%2520%252F%252F%2520left%2520rotate%250A%2520%2520%2520%2520default%2520%253A%2520out_y%2520%253D%252016%27d0%253B%250A%2520%2520endcase%2520%252F%252F%2520end%2520of%2520case%2520structure%250A%2520%2520%250A%2520%2520if%28%21out_y%29%2520flags%255B1%255D%2520%253D%25201%253B%2520%252F%252F%2520set%2520zero%2520flag%2520if%2520output%2520is%2520zero%250Aend%250A%250Aendmodule%250A" style="width: 850px; height: 1560px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+ </iframe>
+</li>
+<li>
+<p>We will use testbench to verify the output of this design. Create a <strong>new</strong> Verilog file and type the testbench code provided below and <strong>Save</strong> the file with the same name as the module name.</p>
+ <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&amp;t=seti&amp;wt=none&amp;l=verilog&amp;width=680&amp;ds=true&amp;dsyoff=0px&amp;dsblur=0px&amp;wc=false&amp;wa=true&amp;pv=9px&amp;ph=9px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%252F%252F%2520Verilog%2520code%2520for%2520TestBench%2520of%25208-bit%2520ALU%250Amodule%2520tb_ALU%253B%2520%2520%252F%252F%2520define%2520module%250A%250Areg%2520%255B7%253A0%255D%2520a%252C%2520b%253B%2520%252F%252F%2520define%2520I%252FO%2520ports%250Areg%2520%255B3%253A0%255D%2520s%253B%250Areg%2520clk%252C%2520en%253B%250Awire%2520%255B15%253A0%255D%2520y%253B%250Awire%2520carry%252C%2520zero%253B%250A%250A%252F%252F%2520map%2520all%2520the%2520I%252FO%2520ports%2520with%2520dut%2520%28design%2520under%2520test%29%250AALU%2520uut%2520%28.a%28a%29%252C%2520.b%28b%29%252C%2520.s%28s%29%252C%2520.en%28en%29%252C%2520.clk%28clk%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520.y%28y%29%252C%2520.carry%28carry%29%2520%252C.zero%2520%28zero%29%29%253B%250A%250A%252F%252F%2520initialize%2520input%2520pins%2520with%25200%250Ainitial%2520begin%250A%2520%2520%2520%2520a%2520%253D%25200%253B%2520b%2520%253D%25200%253B%2520s%2520%253D%25200%253B%2520en%2520%253D%25201%253B%2520clk%2520%253D%25200%253B%250Aend%250A%250Aalways%2520begin%2520%252F%252F%2520generate%2520a%2520clock%2520of%2520period%252010%2520units%250A%2520%2520%2520%2520clk%2520%253D%2520%7Eclk%253B%2520%25235%253B%250Aend%250A%250Ainitial%2520begin%250A%2520%2520%2520%2520%2524display%2520%28%2522time%255Ct%252C%2520clk%255Ct%252C%2520en%255Ct%252C%2520a%255Ct%252C%2520b%255Ct%252C%2520s%255Ct%252C%2520y%255Ct%252C%2520carry%255Ct%252C%2520zero%2522%29%253B%250A%2520%2520%2520%2520%2524monitor%2520%28%2522%2525g%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%2522%252C%2520%2524time%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2509clk%252C%2520en%252C%2520a%252C%2520b%252C%2520s%252C%2520y%252C%2520carry%252C%2520zero%29%253B%250A%2520%2520%2520%2520%252350%253B%250A%2520%2520%2520%2520a%2520%253D%25208%27b11101110%253B%2520%252F%252F%2520initialize%25208-bit%2520input%2520value%2520for%2520a%2520%2526%2520b%250A%2520%2520%2520%2520b%2520%253D%25208%27b11101110%253B%2520%252329%253B%250A%250A%2520%2520%2520%2520%252F%252F%2520initialize%2520%27s%27%2520value%2520to%2520perform%2520different%2520operations%250A%2520%2520%2520%2520s%2520%253D%25204%27b0001%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0010%253B%2520%252330%253B%250A%2520%2520%2520%2520en%2520%253D%25200%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0001%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0010%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0011%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0100%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0101%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0110%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0111%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1000%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1001%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1010%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1011%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1100%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1101%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1110%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1111%253B%2520%252330%253B%250A%2520%2520%2520%2520%252310%253B%2520%2524finish%253B%250Aend%2520%252F%252F%2520end%2520of%2520initial%2520block%250A%250Ainitial%2520begin%250A%2520%2520%2520%2520%2524dumpfile%2520%28%2522alu.vcd%2522%29%253B%250A%2520%2520%2520%2520%2524dumpvars%2520%281%252C%2520tb_ALU%29%253B%250Aend%250A%250Aendmodule%2520%252F%252F%2520end%2520of%2520module%250A" style="width: 850px; height: 1148px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+ </iframe>
+</li>
+<li>
+<p>Compile the code and check for any syntax errors using the below command.</p>
+<pre><code class="language-bash">iverilog ALU.v tb_ALU.v -o ALU
+</code></pre>
+</li>
+<li>
+<p>If there are no errors, use the below command for running the simulation.</p>
+<pre><code class="language-bash">vvp ALU
+</code></pre>
+<p>You will see the values of signals being monitored across each clocktick.</p>
+</li>
+<li>
+<p>If all looks well, use the below command for viewing the waveform. Add the signals from <code>tb_ALU</code> design to the window to view the simulation output as shown in below image.</p>
+<pre><code class="language-bash">gtkwave alu.vcd
+</code></pre>
+ 
+<div align="center">
+     <img src="https://raw.githubusercontent.com/kalindkaria/mdbook-assets/main/cs6102_spring2024-25/resources/digital_circuits/alu/alu_sim_output.png">
+ </div>
+
+ <!-- <div align="center">Figure 2: Simulation Waveform</div><br /> -->
+</li>
+</ol>
+<hr>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../verilog/building-block.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../digital_circuits/up_down_counter.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../verilog/conditional-statements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../digital_circuits/karatsuba_multiplier.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -213,11 +298,11 @@ end
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../verilog/building-block.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../digital_circuits/up_down_counter.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../verilog/conditional-statements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../digital_circuits/karatsuba_multiplier.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

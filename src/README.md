@@ -62,9 +62,9 @@ The detailed course outline and reference material are available on the
 | Date | Topic | Prerequisites | Slides | YouTube Video | Reading / References |
 |------|-------|---------------|--------|-------|----------------------|
 | Jan 07 | Course Prelude and Introduction | — | [Lecture 01](slides/ISC_lec1.pdf) | [Video](https://youtu.be/5agBRN75GPk?si=25lxIxpa3wNH1xJq) | — |
-| Jan 09 | Fundamentals and Perfect Secrecy | — | [Lecture 02](slides/ISC_lec2.pdf) | Video (TBA) | — |
+| Jan 09 | Fundamentals and Perfect Secrecy | — | [Lecture 02](slides/ISC_lec2.pdf) | Video (TBA) | [Introduction to Modern Cryptography](https://www.google.co.in/books/edition/Introduction_to_Modern_Cryptography_Seco/OWZYBQAAQBAJ?hl=en&gbpv=1&pg=PA25&printsec=frontcover) |
 | Jan 14 | Computational Secrecy and Block Ciphers | Lecture 2 | [Lecture 03](slides/ISC_lec3.pdf) | [Video](https://youtu.be/65B3pzsPMFk) | — |
-| Jan 16 | Hardware Design Using Verilog | Basics of digital logic (MUX, flip-flops, registers, etc.) — see [Resources](resources.md#verilog) | [Lecture 04](slides/Lec4_Hardware_Design_using_Verilog%202.pdf) | [Video](https://youtu.be/4s_JIQ2wqL8) | [ASIC World: Verilog HDL](https://asic-world.com/verilog/index.html) |
+| Jan 16 | Hardware Design Using Verilog | Basics of digital logic (MUX, flip-flops, registers, etc.) — see [Resources](resources.md#digital-circuits) | [Lecture 04](slides/ISC_lec4.pdf) | [Video](https://youtu.be/4s_JIQ2wqL8) | [ASIC World: Verilog HDL](https://asic-world.com/verilog/index.html) |
 
 
 ---
@@ -73,7 +73,7 @@ The detailed course outline and reference material are available on the
 | Component                                  | Weight | Notes |
 |--------------------------------------------|--------|-------|
 | Programming Assignments                     | 30%    | Best 2 out of 3 assignments will be considered |
-| Quizzes                                     | 30%    | Best 2 out of 3 quizzes will be considered |
+| Quizzes                                     | 30%    | - |
 | Mid-Semester and End-Semester Examinations | 40%    | - |
 
 

@@ -9,5 +9,11 @@
     - [Blocking vs Non-Blocking](verilog/blocking-nonblocking.md)
     - [Conditional Statements](verilog/conditional-statements.md)
     - [Parameters](verilog/parameters.md)
+  - [Digital Circuits](./digital_circuits/README.md)
+    - [Ripple Carry Adder](./digital_circuits/ripple_carry_adder.md)
+    - [Up Down Counter](./digital_circuits/up_down_counter.md)
+    - [ALU](./digital_circuits/alu.md)
+    - [Karatsuba Multiplier](./digital_circuits/karatsuba_multiplier.md)
+    - [FIFO](./digital_circuits/fifo.md)
 - [Changelog](changelog.md)
 

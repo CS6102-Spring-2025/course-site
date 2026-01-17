@@ -18,6 +18,7 @@ always @(posedge clk) begin
 end
 ```
 
+
 ---
 
 ## Non-blocking Assignment

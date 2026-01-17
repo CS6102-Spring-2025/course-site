@@ -6,10 +6,6 @@ The material here is intended to complement lectures and assignments.
 ---
 
 ## Verilog
-
-The Verilog subsection introduces the Verilog hardware description language and covers fundamental concepts required to design and simulate digital circuits.
-
-Topics include:
 - [Verilog language overview](verilog/index.md)
 - [Data types](verilog/data-type.md)
 - [Core building blocks](verilog/building-block.md)
@@ -19,5 +15,14 @@ Topics include:
 
 Authoritative external references:
 - [ASIC-World Verilog Tutorials](https://asic-world.com/verilog/index.html)
+
+---
+
+## Digital Circuits
+- [Ripple Carry Adder](./digital_circuits/ripple_carry_adder.md)
+- [Up Down Counter](./digital_circuits/up_down_counter.md)
+- [ALU](./digital_circuits/alu.md)
+- [Karatsuba Multiplier](./digital_circuits/karatsuba_multiplier.md)
+- [FIFO](./digital_circuits/fifo.md)
 
 > Additional resources will be added as the course progresses.
