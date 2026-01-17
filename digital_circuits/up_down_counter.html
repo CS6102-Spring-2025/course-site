@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Resources - CS6102 Spring 2025–26</title>
+        <title>Up Down Counter - CS6102 Spring 2025–26</title>
 
 
         <!-- Custom HTML head -->
@@ -12,19 +12,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon-de23e50b.svg">
-        <link rel="shortcut icon" href="favicon-8114d1fc.png">
-        <link rel="stylesheet" href="css/variables-8adf115d.css">
-        <link rel="stylesheet" href="css/general-2459343d.css">
-        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
-        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
-        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -33,13 +33,13 @@
 
         <!-- Provide site root and default themes to javascript -->
         <script>
-            const path_to_root = "";
+            const path_to_root = "../";
             const default_light_theme = "navy";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-d89c7e8c.js";
+            window.path_to_searchindex_js = "../searchindex-d89c7e8c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-8fd0c6d0.js"></script>
+        <script src="../toc-8fd0c6d0.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -106,7 +106,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
             <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -172,45 +172,69 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
-<p>This section contains a curated set of resources to support learning the Verilog hardware description language.
-The material here is intended to complement lectures and assignments.</p>
-<hr>
-<h2 id="verilog"><a class="header" href="#verilog">Verilog</a></h2>
-<ul>
-<li><a href="verilog/index.html">Verilog language overview</a></li>
-<li><a href="verilog/data-type.html">Data types</a></li>
-<li><a href="verilog/building-block.html">Core building blocks</a></li>
-<li><a href="verilog/blocking-nonblocking.html">Blocking vs. non-blocking assignments</a></li>
-<li><a href="verilog/conditional-statements.html">Conditional statements</a></li>
-<li><a href="verilog/parameters.html">Parameters</a></li>
-</ul>
-<p>Authoritative external references:</p>
-<ul>
-<li><a href="https://asic-world.com/verilog/index.html">ASIC-World Verilog Tutorials</a></li>
-</ul>
-<hr>
-<h2 id="digital-circuits"><a class="header" href="#digital-circuits">Digital Circuits</a></h2>
-<ul>
-<li><a href="./digital_circuits/ripple_carry_adder.html">Ripple Carry Adder</a></li>
-<li><a href="./digital_circuits/up_down_counter.html">Up Down Counter</a></li>
-<li><a href="./digital_circuits/alu.html">ALU</a></li>
-<li><a href="./digital_circuits/karatsuba_multiplier.html">Karatsuba Multiplier</a></li>
-<li><a href="./digital_circuits/fifo.html">FIFO</a></li>
-</ul>
-<blockquote>
-<p>Additional resources will be added as the course progresses.</p>
-</blockquote>
+                        <center>
+  
+<h1>Up Down Counter</h1>
 
+</center>
+<hr>
+<p><strong>Problem Statement:</strong> Design and simulate a four-bit Up Down Counter.</p>
+<hr>
+<p><strong>What is Counter?</strong></p>
+<div align="justify">
+A counter is a sequential circuit that keeps on counting specific event. It is used in digital electronics for counting purpose.<br>
+The counter has a defined width <code>N</code>, which means that it can count maximum up to <code>2<sup>N</sup>-1</code> and then rolls back to <code>0</code>.
+<p>Here, we will design a 4-bit Up Down counter. Based on a control signal named <code>up_down</code>, the counter will either count <code>up</code> or <code>down</code> from the current state of the counter.</p>
+</div>
+
+<h2 id="implementing-a-4-bit-up-down-counter"><a class="header" href="#implementing-a-4-bit-up-down-counter">Implementing a 4-bit up down counter</a></h2>
+<ol>
+<li>
+<p>Create a new Verilog file named <code>up_down_counter.v</code>, and copy-paste the below design of 4-bit up down counter.</p>
+ <center>
+ <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&amp;t=seti&amp;wt=none&amp;l=verilog&amp;width=680&amp;ds=true&amp;dsyoff=0px&amp;dsblur=0px&amp;wc=false&amp;wa=true&amp;pv=9px&amp;ph=9px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=module%2520up_down_counter%2520%28clk%252C%2520rst%252C%2520up_down%252C%2520out%29%253B%250A%250Ainput%2520clk%252C%2520rst%252C%2520up_down%253B%250Aoutput%2520%255B3%253A0%255D%2520out%253B%250A%250Areg%2520%255B3%253A0%255D%2520out%253B%250A%250Aalways%2520%2540%28posedge%2520clk%29%2520begin%250A%2520%2520if%2520%28rst%29%250A%2520%2520%2509out%2520%253C%253D%25204%27b0%253B%250A%2520%2520else%2520if%2520%28up_down%29%250A%2520%2520%2509out%2520%253C%253D%2520out%2520%252B%25201%27b1%253B%250A%2520%2520else%250A%2520%2520%2509out%2520%253C%253D%2520out%2520-%25201%27b1%253B%250Aend%250A%250Aendmodule" style="width: 460px; height: 369px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+ </iframe>
+ </center>
+</li>
+<li>
+<p>Create a new Verilog file and type the below testbench code provided below. Save the file with the same name as the module name.</p>
+ <center>
+ <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&amp;t=seti&amp;wt=none&amp;l=verilog&amp;width=680&amp;ds=true&amp;dsyoff=0px&amp;dsblur=0px&amp;wc=false&amp;wa=true&amp;pv=9px&amp;ph=9px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%2560timescale%25201ns%252F1ps%250Amodule%2520tb_up_down_counter%253B%250A%250Areg%2520clk%252C%2520rst%252C%2520up_down%253B%250Awire%2520%255B3%253A0%255D%2520count%253B%250A%250Ainitial%2520begin%250A%2520%2520%2524display%2520%28%2522time%255Ct%252C%2520clk%255Ct%252C%2520rst%255Ct%252C%2520up_down%255Ct%252C%2520count%2522%29%253B%250A%2520%2520%2524monitor%2520%28%2522%2525g%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525d%2522%252C%2520%2524time%252C%2520clk%252C%2520rst%252C%2520up_down%252C%2520count%29%253B%250A%250A%2520%2520clk%2520%253D%25201%253B%250A%2520%2520rst%2520%253D%25200%253B%250A%250A%2520%2520%252310%2520rst%2520%253D%25201%253B%2520up_down%2520%253D%25201%253B%250A%2520%2520%252310%2520rst%2520%253D%25200%253B%250A%2520%2520%252370%2520up_down%2520%253D%25200%253B%250A%2520%2520%252350%2520up_down%2520%253D%25201%253B%250A%2520%2520%252360%2520up_down%2520%253D%25200%253B%250A%250A%2520%2520%252320%253B%250A%2520%2520%25235%2520%2524finish%253B%250Aend%250A%250Aalways%2520begin%250A%2520%2520%25235%2520clk%2520%253D%2520%7Eclk%253B%250Aend%250A%250Aup_down_counter%2520dut%2520%28.clk%28clk%29%252C%2520.rst%28rst%29%252C%2520.up_down%28up_down%29%252C%2520.out%28count%29%29%253B%250A%250Ainitial%2520begin%250A%2520%2520%2524dumpfile%2520%28%2522up_down_counter.vcd%2522%29%253B%250A%2520%2520%2524dumpvars%2520%281%252C%2520tb_up_down_counter%29%253B%250Aend%250A%250Aendmodule" style="width: 769px; height: 704px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+ </iframe>
+ </center>
+</li>
+<li>
+<p>Compile the code and check for any syntax errors using the below command.</p>
+<pre><code class="language-bash">iverilog up_down_counter.v tb_up_down_counter.v -o up_down_counter
+</code></pre>
+</li>
+<li>
+<p>If there are no errors, use the below command for running the simulation.</p>
+<pre><code class="language-bash">vvp up_down_counter
+</code></pre>
+<p>You will see the values of signals being monitored across each clocktick.</p>
+</li>
+<li>
+<p>If all looks well, use the below command for viewing the waveform. Add the signals from <code>tb_up_down_counter</code> design to the window to view the simulation output as shown in below image.</p>
+<pre><code class="language-bash">gtkwave up_down_counter.vcd
+</code></pre>
+ 
+<div align="center">
+     <img src="https://raw.githubusercontent.com/kalindkaria/mdbook-assets/main/cs6102_spring2024-25/resources/digital_circuits/up_down_counter/up_down_counter_sim_output.png">
+ </div>
+
+</li>
+</ol>
+<hr>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="assignments.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../digital_circuits/ripple_carry_adder.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="verilog/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../digital_circuits/alu.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -220,11 +244,11 @@ The material here is intended to complement lectures and assignments.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="assignments.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../digital_circuits/ripple_carry_adder.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="verilog/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../digital_circuits/alu.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
@@ -244,13 +268,13 @@ The material here is intended to complement lectures and assignments.</p>
         </script>
 
 
-        <script src="elasticlunr-ef4e11c1.min.js"></script>
-        <script src="mark-09e88c2c.min.js"></script>
-        <script src="searcher-c2a407aa.js"></script>
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
 
-        <script src="clipboard-1626706a.min.js"></script>
-        <script src="highlight-abc7f01d.js"></script>
-        <script src="book-a0b12cfe.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 

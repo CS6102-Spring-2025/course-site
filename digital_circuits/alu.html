@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ALU - CS6102 Spring 2025–26</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-d89c7e8c.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-8fd0c6d0.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CS6102 Spring 2025–26</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <center>
+    
+<h1>8-bit Arithmetic Logic Unit</h1>
+
+</center>
+<hr>
+<p><strong>Problem Statement:</strong> Design and simulate a 8-bit ALU.</p>
+<hr>
+<h3 id="introduction-to-alu"><a class="header" href="#introduction-to-alu">Introduction to ALU</a></h3>
+<div align="justify">An arithmetic logic unit (ALU) is a digital circuit used to perform arithmetic and logic operations. It represents the fundamental building block of the central processing unit (CPU) of a computer. Modern CPUs contain very powerful and complex ALUs. In addition to ALUs, modern CPUs contain a control unit (CU).</div>
+<br />
+<div align="justify">Most of the operations of a CPU are performed by one or more ALUs, which load data from input registers. A register is a small amount of storage available as part of a CPU. The control unit tells the ALU what operation to perform on that data, and the ALU stores the result in an output register. The control unit moves the data between these registers, the ALU, and memory.</div>
+<br />
+<div align="center">
+  <img width="400" height="400" src="https://raw.githubusercontent.com/kalindkaria/mdbook-assets/main/cs6102_spring2024-25/resources/digital_circuits/alu/alu_block_diag.png">
+</div>
+
+<!-- <div align="center">Figure 1: Block Diagram of 8bit ALU</div><br /> -->
+<div align="justify">Here, we will design an 8-bit ALU which performs different set of arithmetic and logical operations based on the select input <b>s</b>.</div>
+
+<h3 id="implementation-table-of-8-bit-alu"><a class="header" href="#implementation-table-of-8-bit-alu">Implementation Table of 8-bit ALU</a></h3>
+<div align="justify">The below table indicates the Arithmetic and Logical operations performed based on the select input <b>s</b> and also the output <b>y</b> obtained for for the given set of input <b>a</b> and <b>b</b>. This ALU is designed using arithmetic and logical operations mentioned in the table below.</div>
+<br />
+<div align="center">
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">Arithmetic Operations</th><th style="text-align: center">Logical Operations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">Addition</td><td style="text-align: center">Bitwise AND &amp; NAND</td></tr>
+<tr><td style="text-align: center">Subtraction</td><td style="text-align: center">Bitwise OR &amp; NOR</td></tr>
+<tr><td style="text-align: center">Multiplication</td><td style="text-align: center">Bitwise NOR &amp; XNOR</td></tr>
+<tr><td style="text-align: center">Division</td><td style="text-align: center">Shift Right &amp; Shift Left</td></tr>
+<tr><td style="text-align: center">Increment</td><td style="text-align: center">Rotate Right &amp; Rotate Left</td></tr>
+<tr><td style="text-align: center">Decrement</td><td style="text-align: center"></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<br />
+<div align="center"><b>Table 1: Implementation Table of 8-bit ALU</b></div>
+
+<div align="center">
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>s</th><th>operation</th><th>a</th><th>b</th><th>y</th><th>carry</th><th>zero</th></tr>
+</thead>
+<tbody>
+<tr><td>0000</td><td>Addition</td><td>11101110</td><td>11101110</td><td>00000000 11011100</td><td>1</td><td>0</td></tr>
+<tr><td>0001</td><td>Subtraction</td><td>11101110</td><td>11101110</td><td>00000000 00000000</td><td>0</td><td>1</td></tr>
+<tr><td>0010</td><td>Increment</td><td>11101110</td><td>11101110</td><td>00000000 11101111</td><td>0</td><td>0</td></tr>
+<tr><td>0011</td><td>Decrement</td><td>11101110</td><td>11101110</td><td>00000000 11101101</td><td>0</td><td>0</td></tr>
+<tr><td>0100</td><td>Multiplication</td><td>11101110</td><td>11101110</td><td>11011101 01000100</td><td>0</td><td>0</td></tr>
+<tr><td>0101</td><td>Division</td><td>11101110</td><td>11101110</td><td>00000000 00000001</td><td>0</td><td>0</td></tr>
+<tr><td>0110</td><td>Bitwise AND</td><td>11101110</td><td>11101110</td><td>00000000 11101110</td><td>0</td><td>0</td></tr>
+<tr><td>0111</td><td>Bitwise OR</td><td>11101110</td><td>11101110</td><td>00000000 11101110</td><td>0</td><td>0</td></tr>
+<tr><td>1000</td><td>Bitwise XOR</td><td>11101110</td><td>11101110</td><td>00000000 00000000</td><td>0</td><td>1</td></tr>
+<tr><td>1001</td><td>Bitwise NAND</td><td>11101110</td><td>11101110</td><td>00000000 00010001</td><td>0</td><td>0</td></tr>
+<tr><td>1010</td><td>Bitwise NOR</td><td>11101110</td><td>11101110</td><td>00000000 00010001</td><td>0</td><td>0</td></tr>
+<tr><td>1011</td><td>Bitwise XNOR</td><td>11101110</td><td>11101110</td><td>00000000 11111111</td><td>0</td><td>0</td></tr>
+<tr><td>1100</td><td>Shift Left</td><td>11101110</td><td>11101110</td><td>00000000 11011100</td><td>1</td><td>0</td></tr>
+<tr><td>1101</td><td>Shift Right</td><td>11101110</td><td>11101110</td><td>00000000 01110111</td><td>0</td><td>0</td></tr>
+<tr><td>1110</td><td>Rotate Right</td><td>11101110</td><td>11101110</td><td>00000000 01110111</td><td>0</td><td>0</td></tr>
+<tr><td>1111</td><td>Rotate Left</td><td>11101110</td><td>11101110</td><td>00000000 11011101</td><td>0</td><td>0</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<br />
+<h3 id="implementation-of-8-bit-alu"><a class="header" href="#implementation-of-8-bit-alu">Implementation of 8-bit ALU</a></h3>
+<p>To implement 8-bit ALU design, follow these steps.</p>
+<ol>
+<li>
+<p>Create a new Verilog file and start writing code for 8-bit ALU as given below and save the file. Keep the file name as <strong>ALU</strong>.</p>
+ <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&amp;t=seti&amp;wt=none&amp;l=verilog&amp;width=680&amp;ds=true&amp;dsyoff=0px&amp;dsblur=0px&amp;wc=false&amp;wa=true&amp;pv=9px&amp;ph=9px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%252F%252F%2520Verilog%2520design%2520for%2520a%25208-bit%2520ALU%250A%252F%252F%2520define%2520module%250Amodule%2520ALU%2520%28%250A%2520%2520%2509input%2520clk%252C%2520en%252C%2520%2520%2520%252F%252F%2520define%2520clock%2520and%2520enable%2520%28active%2520low%29%2520signal%250A%2520%2520%2520%2520input%2520%255B7%253A0%255D%2520a%252C%2520b%252C%250A%2520%2520%2509input%2520%255B3%253A0%255D%2520s%252C%2520%2520%2520%252F%252F%2520define%2520inputs%2520a%252C%2520b%2520and%2520select%2520line%2520input%2520s%250A%2520%2520%2509output%2520reg%2520%255B15%253A0%255D%2520y%252C%2520%252F%252F%2520define%252016%2520bit%2520ALU%2520output%250A%2520%2520%2520%2520output%2520reg%2520carry%2520%252C%2520zero%2520%252F%252F%2520define%2520flag%2520output%250A%29%253B%250A%250Areg%2520%255B7%253A0%255D%2520a_in%252C%2520b_in%253B%2520%252F%252F%2520local%2520registers%2520for%2520input%2520%27a%27%2520and%2520%27b%27%250A%250A%252F*%2520local%2520register%2520to%2520store%2520carry%2520bit%2520in%2520flags%2520%255B0%255D%2520%2526%250Azero%2520flag%2520bit%2520in%2520flags%2520%255B1%255D%2520*%252F%250Areg%2520%255B1%253A0%255D%2520flags%253B%250A%250Areg%2520%255B15%253A0%255D%2520out_y%253B%2520%252F%252F%2520local%2520register%2520to%2520store%252016%2520bit%2520output%2520%27y%27%250A%250Ainitial%2520begin%250A%2520%2520%2520%2520y%2520%253D%25200%253B%2520carry%2520%253D%25200%253B%2520zero%2520%253D%25200%253B%250Aend%250A%250A%252F%252F%2520datapath%2520design%250Aalways%2520%2540%28posedge%2520clk%252C%2520posedge%2520en%29%2520begin%250A%2520%2520%2520%2520%252F%252F%2520if%2520en%2520%253D%25201%252C%2520reset%2520all%2520outputs%250A%2520%2520%2520%2520if%2520%28en%29%2520begin%250A%2520%2520%2520%2520%2520%2520%2520%2520a_in%2520%253C%253D%25200%253B%2520b_in%2520%253C%253D%25200%253B%2520y%2520%253C%253D%25200%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520carry%2520%253C%253D%25200%253B%2520zero%2520%253C%253D%25200%253B%250A%2520%2520%2520%2520end%250A%2520%2520%2520%2520else%2520begin%2520%252F%252F%2520if%2520en%2520%253D%25200%252C%2520latch%2520all%2520output%2520flip%2520flops%250A%2520%2520%2520%2520%2520%2520%2520%2520a_in%2520%253C%253D%2520a%253B%2520b_in%2520%253C%253D%2520b%253B%2520y%2520%253C%253D%2520out_y%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520carry%2520%253C%253D%2520flags%2520%255B0%255D%253B%2520zero%2520%253C%253D%2520flags%2520%255B1%255D%253B%250A%2520%2520%2520%2520end%250Aend%250A%250A%252F%252F%2520controller%2520design%250Aalways%2520%2540%28a_in%252C%2520b_in%252C%2520s%29%2520begin%250A%2520%2520flags%2520%253D%25202%27b00%253B%250A%2520%2520case%2520%28s%29%250A%2520%2520%2520%25204%27d0%253A%2520begin%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520%252B%2520b_in%2520%29%257D%253B%2520%252F%252F%2520addition%250A%2520%2520%2520%2520%2520%2520flags%2520%255B0%255D%2520%253D%2520out_y%2520%255B8%255D%2520%253B%2520%252F%252F%2520carry%2520is%2520set%2520if%2520generated%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d1%253A%2520begin%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520-%2520b_in%2520%29%257D%253B%2520%252F%252F%2520subtraction%250A%2520%2520%2520%2520%2520%2520flags%2520%255B0%255D%2520%253D%2520out_y%255B8%255D%2520%253B%2520%252F%252F%2520carry%2520is%2520set%2520if%2520borrow%2520is%2520taken%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d2%253A%2520begin%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%2520%252C%28a_in%2520%252B%25201%27b1%29%257D%253B%2520%252F%252F%2520increment%250A%2520%2520%2520%2520%2520%2520flags%2520%255B0%255D%2520%253D%2520out_y%255B8%255D%253B%2520%252F%252F%2520carry%2520is%2520set%2520if%2520generated%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d3%253A%2520begin%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28a_in%2520-%25201%27b1%29%257D%253B%2520%252F%252F%2520decrement%250A%2520%2520%2520%2520%2520%2520flags%255B0%255D%2520%253D%2520out_y%255B8%255D%253B%2520%252F%252F%2520carry%2520is%2520set%2520if%2520borrow%2520is%2520taken%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d4%253A%2520%2520out_y%2520%253D%2520%28%2520a_in%2520*%2520b_in%2520%29%253B%2520%252F%252F%2520multiplication%250A%2520%2520%2520%25204%27d5%253A%2520%2520out_y%2520%253D%2520%28%2520a_in%2520%252F%2520b_in%2520%29%253B%2520%252F%252F%2520division%250A%2520%2520%2520%25204%27d6%253A%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520%2526%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520AND%250A%2520%2520%2520%25204%27d7%253A%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520%257C%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520OR%250A%2520%2520%2520%25204%27d8%253A%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28%2520a_in%2520%255E%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520XOR%250A%2520%2520%2520%25204%27d9%253A%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%7E%28%2520a_in%2520%2526%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520NAND%250A%2520%2520%2520%25204%27d10%253A%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%7E%28%2520a_in%2520%257C%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520NOR%250A%2520%2520%2520%25204%27d11%253A%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%7E%28%2520a_in%2520%255E%2520b_in%2520%29%257D%253B%2520%252F%252F%2520bitwise%2520XNOR%250A%2520%2520%2520%25204%27d12%253A%2520begin%250A%2520%2520%2520%2520%2520%2520flags%255B0%255D%2520%253D%2520a_in%255B7%255D%253B%2520%252F%252F%2520update%2520carry%2520flag%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%2520%252C%2520%28a_in%2520%253C%253C%25201%29%257D%253B%2520%252F%252F%2520shift%2520left%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d13%253A%2520begin%250A%2520%2520%2520%2520%2520%2520flags%255B0%255D%2520%253D%2520a_in%255B0%255D%2520%253B%2520%252F%252F%2520update%2520carry%2520flag%250A%2520%2520%2520%2520%2520%2520out_y%2520%253D%2520%257B8%27d0%252C%2520%28a_in%2520%253E%253E%25201%29%257D%253B%2520%252F%252F%2520shift%2520right%250A%2520%2520%2520%2520end%250A%2520%2520%2520%25204%27d14%253A%2520out_y%2520%253D%2520%257B8%27d0%252C%2520a_in%2520%255B0%255D%252C%2520a_in%2520%255B7%253A1%255D%257D%253B%2520%252F%252F%2520right%2520rotate%250A%2520%2520%2520%25204%27d15%253A%2520out_y%2520%253D%2520%257B8%27d0%252C%2520a_in%2520%255B6%253A0%255D%252C%2520a_in%255B7%255D%257D%253B%2520%252F%252F%2520left%2520rotate%250A%2520%2520%2520%2520default%2520%253A%2520out_y%2520%253D%252016%27d0%253B%250A%2520%2520endcase%2520%252F%252F%2520end%2520of%2520case%2520structure%250A%2520%2520%250A%2520%2520if%28%21out_y%29%2520flags%255B1%255D%2520%253D%25201%253B%2520%252F%252F%2520set%2520zero%2520flag%2520if%2520output%2520is%2520zero%250Aend%250A%250Aendmodule%250A" style="width: 850px; height: 1560px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+ </iframe>
+</li>
+<li>
+<p>We will use testbench to verify the output of this design. Create a <strong>new</strong> Verilog file and type the testbench code provided below and <strong>Save</strong> the file with the same name as the module name.</p>
+ <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&amp;t=seti&amp;wt=none&amp;l=verilog&amp;width=680&amp;ds=true&amp;dsyoff=0px&amp;dsblur=0px&amp;wc=false&amp;wa=true&amp;pv=9px&amp;ph=9px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%252F%252F%2520Verilog%2520code%2520for%2520TestBench%2520of%25208-bit%2520ALU%250Amodule%2520tb_ALU%253B%2520%2520%252F%252F%2520define%2520module%250A%250Areg%2520%255B7%253A0%255D%2520a%252C%2520b%253B%2520%252F%252F%2520define%2520I%252FO%2520ports%250Areg%2520%255B3%253A0%255D%2520s%253B%250Areg%2520clk%252C%2520en%253B%250Awire%2520%255B15%253A0%255D%2520y%253B%250Awire%2520carry%252C%2520zero%253B%250A%250A%252F%252F%2520map%2520all%2520the%2520I%252FO%2520ports%2520with%2520dut%2520%28design%2520under%2520test%29%250AALU%2520uut%2520%28.a%28a%29%252C%2520.b%28b%29%252C%2520.s%28s%29%252C%2520.en%28en%29%252C%2520.clk%28clk%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520.y%28y%29%252C%2520.carry%28carry%29%2520%252C.zero%2520%28zero%29%29%253B%250A%250A%252F%252F%2520initialize%2520input%2520pins%2520with%25200%250Ainitial%2520begin%250A%2520%2520%2520%2520a%2520%253D%25200%253B%2520b%2520%253D%25200%253B%2520s%2520%253D%25200%253B%2520en%2520%253D%25201%253B%2520clk%2520%253D%25200%253B%250Aend%250A%250Aalways%2520begin%2520%252F%252F%2520generate%2520a%2520clock%2520of%2520period%252010%2520units%250A%2520%2520%2520%2520clk%2520%253D%2520%7Eclk%253B%2520%25235%253B%250Aend%250A%250Ainitial%2520begin%250A%2520%2520%2520%2520%2524display%2520%28%2522time%255Ct%252C%2520clk%255Ct%252C%2520en%255Ct%252C%2520a%255Ct%252C%2520b%255Ct%252C%2520s%255Ct%252C%2520y%255Ct%252C%2520carry%255Ct%252C%2520zero%2522%29%253B%250A%2520%2520%2520%2520%2524monitor%2520%28%2522%2525g%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%2522%252C%2520%2524time%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2509clk%252C%2520en%252C%2520a%252C%2520b%252C%2520s%252C%2520y%252C%2520carry%252C%2520zero%29%253B%250A%2520%2520%2520%2520%252350%253B%250A%2520%2520%2520%2520a%2520%253D%25208%27b11101110%253B%2520%252F%252F%2520initialize%25208-bit%2520input%2520value%2520for%2520a%2520%2526%2520b%250A%2520%2520%2520%2520b%2520%253D%25208%27b11101110%253B%2520%252329%253B%250A%250A%2520%2520%2520%2520%252F%252F%2520initialize%2520%27s%27%2520value%2520to%2520perform%2520different%2520operations%250A%2520%2520%2520%2520s%2520%253D%25204%27b0001%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0010%253B%2520%252330%253B%250A%2520%2520%2520%2520en%2520%253D%25200%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0001%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0010%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0011%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0100%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0101%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0110%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b0111%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1000%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1001%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1010%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1011%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1100%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1101%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1110%253B%2520%252330%253B%250A%2520%2520%2520%2520s%2520%253D%25204%27b1111%253B%2520%252330%253B%250A%2520%2520%2520%2520%252310%253B%2520%2524finish%253B%250Aend%2520%252F%252F%2520end%2520of%2520initial%2520block%250A%250Ainitial%2520begin%250A%2520%2520%2520%2520%2524dumpfile%2520%28%2522alu.vcd%2522%29%253B%250A%2520%2520%2520%2520%2524dumpvars%2520%281%252C%2520tb_ALU%29%253B%250Aend%250A%250Aendmodule%2520%252F%252F%2520end%2520of%2520module%250A" style="width: 850px; height: 1148px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+ </iframe>
+</li>
+<li>
+<p>Compile the code and check for any syntax errors using the below command.</p>
+<pre><code class="language-bash">iverilog ALU.v tb_ALU.v -o ALU
+</code></pre>
+</li>
+<li>
+<p>If there are no errors, use the below command for running the simulation.</p>
+<pre><code class="language-bash">vvp ALU
+</code></pre>
+<p>You will see the values of signals being monitored across each clocktick.</p>
+</li>
+<li>
+<p>If all looks well, use the below command for viewing the waveform. Add the signals from <code>tb_ALU</code> design to the window to view the simulation output as shown in below image.</p>
+<pre><code class="language-bash">gtkwave alu.vcd
+</code></pre>
+ 
+<div align="center">
+     <img src="https://raw.githubusercontent.com/kalindkaria/mdbook-assets/main/cs6102_spring2024-25/resources/digital_circuits/alu/alu_sim_output.png">
+ </div>
+
+ <!-- <div align="center">Figure 2: Simulation Waveform</div><br /> -->
+</li>
+</ol>
+<hr>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../digital_circuits/up_down_counter.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../digital_circuits/karatsuba_multiplier.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../digital_circuits/up_down_counter.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../digital_circuits/karatsuba_multiplier.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
