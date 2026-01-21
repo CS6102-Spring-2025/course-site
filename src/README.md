@@ -1,3 +1,38 @@
+<div id="tutorial-jan28-notice"
+  style="
+    background-color:#111827;
+    border-left:6px solid #f59e0b;
+    color:#f9fafb;
+    padding:14px 18px;
+    margin:20px 0;
+    border-radius:6px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+    position:relative;
+  ">
+  <strong>📌 Tutorial Announcement</strong>
+  <div style="margin-top:4px;">
+    <strong>Jan 28 (Tuesday): Tutorial class — Mandatory attendance</strong>
+  </div>
+
+  <button onclick="document.getElementById('tutorial-jan28-notice').style.display='none';"
+    style="
+      position:absolute;
+      top:10px;
+      right:14px;
+      background:none;
+      border:none;
+      color:#f59e0b;
+      font-size:20px;
+      cursor:pointer;
+    ">
+    ×
+  </button>
+</div>
+
+
+
+
+
 # Implementation Security in Cryptography
 
 **Instructor:**  
@@ -65,8 +100,7 @@ The detailed course outline and reference material are available on the
 | Jan 09 | Fundamentals and Perfect Secrecy | — | [Lecture 02](slides/ISC_lec2.pdf) | Video (TBA) | [Introduction to Modern Cryptography](https://www.google.co.in/books/edition/Introduction_to_Modern_Cryptography_Seco/OWZYBQAAQBAJ?hl=en&gbpv=1&pg=PA25&printsec=frontcover) |
 | Jan 14 | Computational Secrecy and Block Ciphers | Lecture 2 | [Lecture 03](slides/ISC_lec3.pdf) | [Video](https://youtu.be/65B3pzsPMFk) | — |
 | Jan 16 | Hardware Design Using Verilog | Basics of digital logic (MUX, flip-flops, registers, etc.) — see [Resources](resources.md#digital-circuits) | [Lecture 04](slides/ISC_lec4.pdf) | [Video](https://youtu.be/4s_JIQ2wqL8) | [ASIC World: Verilog HDL](https://asic-world.com/verilog/index.html) |
-| Jan 21 | — | — | — | — | [Switching and Finite Automata Theory](https://www.google.co.in/books/edition/Switching_and_Finite_Automata_Theory/Qv0LBAAAQBAJ?hl=en&gbpv=1&pg=PP1&printsec=frontcover) |
-
+| Jan 21 | Sequential Circuits & Hardware Mapping | Lecture 4 | Lecture 4 slides + [extended slides](slides/Lec_4_ext_Mapping_an_algorithm_to_hardware.pdf) | [Video](https://youtu.be/9eYv7Vz8c3U) | [Switching and Finite Automata Theory](https://www.google.co.in/books/edition/Switching_and_Finite_Automata_Theory/Qv0LBAAAQBAJ?hl=en&gbpv=1&pg=PP1&printsec=frontcover) |
 
 
 ---

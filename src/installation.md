@@ -1,14 +1,13 @@
 # Installation
 
----
 
-**Coming Soon**
+<!-- **Coming Soon**
 
 This page will be updated as the course progresses.
 
-Please check back later.
+Please check back later. -->
 
-<!-- 
+
 
 
 <center>
@@ -227,5 +226,3 @@ sudo apt install tcl tk libx11-dev libxft-dev
     <br>
 
 ---
-
- -->
