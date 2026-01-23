@@ -7,6 +7,7 @@ Updates are listed in **reverse chronological order**.
 
 | Date       | Type     | Update |
 |------------|----------|--------|
+| 23/01/2026 | Slides   | [Lecture 06 (Finite Fields and Hardware)](slides/ISC_lec6.pdf) slides added |
 | 21/01/2026 | Installation | Installation guide for required software and tools added |
 | 21/01/2026 | Slides   | [Extended slides](slides/Lec_4_ext_Mapping_an_algorithm_to_hardware.pdf) for Lecture 05 added|
 | 16/01/2026 | Slides   | [Lecture 04 (Hardware Design Using Verilog)](slides/ISC_lec4.pdf) slides added |
