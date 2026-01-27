@@ -5,4 +5,4 @@ covered in the course.
 
 | Tutorial | Topic | Date |
 |---------|-------|------|
-| [Tutorial 1](./1/README.md) | Verilog Basics | 28 Jan |
+| [Tutorial 1](./1/index.md) | Verilog Basics | 28 Jan |
