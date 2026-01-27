@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Up Down Counter - CS6102 Spring 2025–26</title>
+        <title>Tutorial 1: Verilog Basics - CS6102 Spring 2025–26</title>
 
 
         <!-- Custom HTML head -->
@@ -12,19 +12,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon-de23e50b.svg">
-        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
-        <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
-        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
-        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -33,13 +33,13 @@
 
         <!-- Provide site root and default themes to javascript -->
         <script>
-            const path_to_root = "../";
+            const path_to_root = "../../";
             const default_light_theme = "navy";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-693858f1.js";
+            window.path_to_searchindex_js = "../../searchindex-693858f1.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fa17db7.js"></script>
+        <script src="../../toc-1fa17db7.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -106,7 +106,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
             </noscript>
             <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -172,69 +172,277 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <center>
-  
-<h1>Up Down Counter</h1>
-
-</center>
-<hr>
-<p><strong>Problem Statement:</strong> Design and simulate a four-bit Up Down Counter.</p>
-<hr>
-<p><strong>What is Counter?</strong></p>
-<div align="justify">
-A counter is a sequential circuit that keeps on counting specific event. It is used in digital electronics for counting purpose.<br>
-The counter has a defined width <code>N</code>, which means that it can count maximum up to <code>2<sup>N</sup>-1</code> and then rolls back to <code>0</code>.
-<p>Here, we will design a 4-bit Up Down counter. Based on a control signal named <code>up_down</code>, the counter will either count <code>up</code> or <code>down</code> from the current state of the counter.</p>
+                        <h1 id="verilog-full-adder-tutorial"><a class="header" href="#verilog-full-adder-tutorial">Verilog Full Adder Tutorial</a></h1>
+<p>A comprehensive tutorial covering basic adder design and testbench concepts in Verilog.</p>
+<h2 id="files"><a class="header" href="#files">Files</a></h2>
+<p>📦 <strong><a href="Tutorial1.tar.gz">Download all files</a></strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>File</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>full_adder.v</code></td><td>Design file containing 1-bit full adder and 4-bit ripple carry adder</td></tr>
+<tr><td><code>full_adder_tb.v</code></td><td>Testbench with exhaustive testing and detailed comments</td></tr>
+<tr><td><code>Makefile</code></td><td>Build automation for compilation and simulation</td></tr>
+</tbody>
+</table>
 </div>
+<h2 id="quick-start"><a class="header" href="#quick-start">Quick Start</a></h2>
+<pre><code class="language-bash"># Compile and run
+make
 
-<h2 id="implementing-a-4-bit-up-down-counter"><a class="header" href="#implementing-a-4-bit-up-down-counter">Implementing a 4-bit up down counter</a></h2>
+# Or manually:
+iverilog -o full_adder_sim full_adder.v full_adder_tb.v
+vvp full_adder_sim
+
+# View waveforms (if GTKWave is installed)
+make wave
+</code></pre>
+<hr>
+<h2 id="key-verilog-concepts-explained"><a class="header" href="#key-verilog-concepts-explained">Key Verilog Concepts Explained</a></h2>
+<h3 id="1-module-structure"><a class="header" href="#1-module-structure">1. Module Structure</a></h3>
+<pre><code class="language-verilog">module module_name (
+    input  wire signal_in,
+    output wire signal_out
+);
+    // Internal logic here
+endmodule
+</code></pre>
+<ul>
+<li><strong>Module</strong>: Basic building block (like a function/class)</li>
+<li><strong>Ports</strong>: Interface to outside world (inputs/outputs)</li>
+<li><strong>wire</strong>: Default type for ports, represents physical connections</li>
+</ul>
+<h3 id="2-data-types"><a class="header" href="#2-data-types">2. Data Types</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Type</th><th>Use Case</th></tr>
+</thead>
+<tbody>
+<tr><td><code>wire</code></td><td>Connections, driven by <code>assign</code> or module outputs</td></tr>
+<tr><td><code>reg</code></td><td>Variables assigned in procedural blocks (<code>always</code>, <code>initial</code>)</td></tr>
+<tr><td><code>integer</code></td><td>32-bit signed integers for loops/counters</td></tr>
+<tr><td><code>parameter</code></td><td>Constants, can be overridden at instantiation</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="3-operators"><a class="header" href="#3-operators">3. Operators</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Category</th><th>Operators</th><th>Example</th></tr>
+</thead>
+<tbody>
+<tr><td>Bitwise</td><td><code>&amp;</code> `</td><td><code> </code>^<code> </code>~`</td></tr>
+<tr><td>Logical</td><td><code>&amp;&amp;</code> `</td><td></td></tr>
+<tr><td>Comparison</td><td><code>==</code> <code>!=</code> <code>===</code> <code>!==</code></td><td><code>a == b</code></td></tr>
+<tr><td>Arithmetic</td><td><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code></td><td><code>a + b</code></td></tr>
+<tr><td>Shift</td><td><code>&lt;&lt;</code> <code>&gt;&gt;</code></td><td><code>a &lt;&lt; 2</code></td></tr>
+<tr><td>Concatenation</td><td><code>{ }</code></td><td><code>{a, b}</code></td></tr>
+<tr><td>Replication</td><td><code>{n{ }}</code></td><td><code>{4{1'b0}}</code></td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Important</strong>: <code>==</code> vs <code>===</code></p>
+<ul>
+<li><code>==</code> returns X if either operand has X/Z</li>
+<li><code>===</code> does exact comparison including X/Z values</li>
+</ul>
+<h3 id="4-number-representation"><a class="header" href="#4-number-representation">4. Number Representation</a></h3>
+<pre><code class="language-verilog">4'b1010    // 4-bit binary = 10
+8'hFF      // 8-bit hex = 255
+8'd255     // 8-bit decimal = 255
+4'bxxxx    // 4-bit unknown
+4'bzzzz    // 4-bit high-impedance
+</code></pre>
+<p>Format: <code>&lt;size&gt;'&lt;base&gt;&lt;value&gt;</code></p>
+<h3 id="5-continuous-vs-procedural-assignment"><a class="header" href="#5-continuous-vs-procedural-assignment">5. Continuous vs Procedural Assignment</a></h3>
+<p><strong>Continuous (Combinational Logic)</strong>:</p>
+<pre><code class="language-verilog">assign sum = a ^ b;  // Always reflects current inputs
+</code></pre>
+<p><strong>Procedural (Sequential/Complex Logic)</strong>:</p>
+<pre><code class="language-verilog">always @(posedge clk) begin
+    q &lt;= d;  // Updates on clock edge
+end
+
+always @(*) begin    // Combinational in always block
+    if (sel)
+        y = a;
+    else
+        y = b;
+end
+</code></pre>
+<h3 id="6-blocking-vs-non-blocking-assignment"><a class="header" href="#6-blocking-vs-non-blocking-assignment">6. Blocking vs Non-Blocking Assignment</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Type</th><th>Operator</th><th>Use Case</th></tr>
+</thead>
+<tbody>
+<tr><td>Blocking</td><td><code>=</code></td><td>Combinational logic, testbenches</td></tr>
+<tr><td>Non-blocking</td><td><code>&lt;=</code></td><td>Sequential logic (flip-flops)</td></tr>
+</tbody>
+</table>
+</div>
+<pre><code class="language-verilog">// WRONG - race condition
+always @(posedge clk) begin
+    a = b;
+    b = a;  // Both get same value!
+end
+
+// CORRECT
+always @(posedge clk) begin
+    a &lt;= b;
+    b &lt;= a;  // Proper swap
+end
+</code></pre>
+<h3 id="7-module-instantiation"><a class="header" href="#7-module-instantiation">7. Module Instantiation</a></h3>
+<pre><code class="language-verilog">// Named port connection (PREFERRED)
+full_adder fa0 (
+    .a(input_a),
+    .b(input_b),
+    .cin(carry_in),
+    .sum(sum_out),
+    .cout(carry_out)
+);
+
+// Positional (error-prone, avoid)
+full_adder fa0 (input_a, input_b, carry_in, sum_out, carry_out);
+</code></pre>
+<hr>
+<h2 id="testbench-concepts"><a class="header" href="#testbench-concepts">Testbench Concepts</a></h2>
+<h3 id="1-testbench-structure"><a class="header" href="#1-testbench-structure">1. Testbench Structure</a></h3>
+<pre><code class="language-verilog">`timescale 1ns / 1ps
+
+module design_tb;         // No ports!
+    reg  inputs;          // Driven by testbench
+    wire outputs;         // Driven by DUT
+    
+    design dut (...);     // Instantiate DUT
+    
+    initial begin         // Test stimulus
+        // Generate patterns
+        // Check results
+        $finish;
+    end
+endmodule
+</code></pre>
+<h3 id="2-system-tasks-non-synthesizable"><a class="header" href="#2-system-tasks-non-synthesizable">2. System Tasks (Non-Synthesizable)</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Task</th><th>Purpose</th></tr>
+</thead>
+<tbody>
+<tr><td><code>$display()</code></td><td>Print with newline</td></tr>
+<tr><td><code>$write()</code></td><td>Print without newline</td></tr>
+<tr><td><code>$monitor()</code></td><td>Print on any signal change</td></tr>
+<tr><td><code>$time</code></td><td>Current simulation time</td></tr>
+<tr><td><code>$random</code></td><td>Generate random number</td></tr>
+<tr><td><code>$finish</code></td><td>End simulation</td></tr>
+<tr><td><code>$stop</code></td><td>Pause simulation</td></tr>
+<tr><td><code>$dumpfile()</code></td><td>Specify VCD filename</td></tr>
+<tr><td><code>$dumpvars()</code></td><td>Record signals to VCD</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="3-timing-control"><a class="header" href="#3-timing-control">3. Timing Control</a></h3>
+<pre><code class="language-verilog">#10;              // Delay 10 time units
+#10 a = 1;        // Delay then assign
+@(posedge clk);   // Wait for clock edge
+wait(signal);     // Wait until signal is true
+</code></pre>
+<h3 id="4-test-strategy"><a class="header" href="#4-test-strategy">4. Test Strategy</a></h3>
 <ol>
-<li>
-<p>Create a new Verilog file named <code>up_down_counter.v</code>, and copy-paste the below design of 4-bit up down counter.</p>
- <center>
- <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&amp;t=seti&amp;wt=none&amp;l=verilog&amp;width=680&amp;ds=true&amp;dsyoff=0px&amp;dsblur=0px&amp;wc=false&amp;wa=true&amp;pv=9px&amp;ph=9px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=module%2520up_down_counter%2520%28clk%252C%2520rst%252C%2520up_down%252C%2520out%29%253B%250A%250Ainput%2520clk%252C%2520rst%252C%2520up_down%253B%250Aoutput%2520%255B3%253A0%255D%2520out%253B%250A%250Areg%2520%255B3%253A0%255D%2520out%253B%250A%250Aalways%2520%2540%28posedge%2520clk%29%2520begin%250A%2520%2520if%2520%28rst%29%250A%2520%2520%2509out%2520%253C%253D%25204%27b0%253B%250A%2520%2520else%2520if%2520%28up_down%29%250A%2520%2520%2509out%2520%253C%253D%2520out%2520%252B%25201%27b1%253B%250A%2520%2520else%250A%2520%2520%2509out%2520%253C%253D%2520out%2520-%25201%27b1%253B%250Aend%250A%250Aendmodule" style="width: 460px; height: 369px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin">
- </iframe>
- </center>
-</li>
-<li>
-<p>Create a new Verilog file and type the below testbench code provided below. Save the file with the same name as the module name.</p>
- <center>
- <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&amp;t=seti&amp;wt=none&amp;l=verilog&amp;width=680&amp;ds=true&amp;dsyoff=0px&amp;dsblur=0px&amp;wc=false&amp;wa=true&amp;pv=9px&amp;ph=9px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%2560timescale%25201ns%252F1ps%250Amodule%2520tb_up_down_counter%253B%250A%250Areg%2520clk%252C%2520rst%252C%2520up_down%253B%250Awire%2520%255B3%253A0%255D%2520count%253B%250A%250Ainitial%2520begin%250A%2520%2520%2524display%2520%28%2522time%255Ct%252C%2520clk%255Ct%252C%2520rst%255Ct%252C%2520up_down%255Ct%252C%2520count%2522%29%253B%250A%2520%2520%2524monitor%2520%28%2522%2525g%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525b%255Ct%2520%2525d%2522%252C%2520%2524time%252C%2520clk%252C%2520rst%252C%2520up_down%252C%2520count%29%253B%250A%250A%2520%2520clk%2520%253D%25201%253B%250A%2520%2520rst%2520%253D%25200%253B%250A%250A%2520%2520%252310%2520rst%2520%253D%25201%253B%2520up_down%2520%253D%25201%253B%250A%2520%2520%252310%2520rst%2520%253D%25200%253B%250A%2520%2520%252370%2520up_down%2520%253D%25200%253B%250A%2520%2520%252350%2520up_down%2520%253D%25201%253B%250A%2520%2520%252360%2520up_down%2520%253D%25200%253B%250A%250A%2520%2520%252320%253B%250A%2520%2520%25235%2520%2524finish%253B%250Aend%250A%250Aalways%2520begin%250A%2520%2520%25235%2520clk%2520%253D%2520%7Eclk%253B%250Aend%250A%250Aup_down_counter%2520dut%2520%28.clk%28clk%29%252C%2520.rst%28rst%29%252C%2520.up_down%28up_down%29%252C%2520.out%28count%29%29%253B%250A%250Ainitial%2520begin%250A%2520%2520%2524dumpfile%2520%28%2522up_down_counter.vcd%2522%29%253B%250A%2520%2520%2524dumpvars%2520%281%252C%2520tb_up_down_counter%29%253B%250Aend%250A%250Aendmodule" style="width: 769px; height: 704px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin">
- </iframe>
- </center>
-</li>
-<li>
-<p>Compile the code and check for any syntax errors using the below command.</p>
-<pre><code class="language-bash">iverilog up_down_counter.v tb_up_down_counter.v -o up_down_counter
-</code></pre>
-</li>
-<li>
-<p>If there are no errors, use the below command for running the simulation.</p>
-<pre><code class="language-bash">vvp up_down_counter
-</code></pre>
-<p>You will see the values of signals being monitored across each clocktick.</p>
-</li>
-<li>
-<p>If all looks well, use the below command for viewing the waveform. Add the signals from <code>tb_up_down_counter</code> design to the window to view the simulation output as shown in below image.</p>
-<pre><code class="language-bash">gtkwave up_down_counter.vcd
-</code></pre>
- 
-<div align="center">
-     <img src="https://raw.githubusercontent.com/kalindkaria/mdbook-assets/main/cs6102_spring2024-25/resources/digital_circuits/up_down_counter/up_down_counter_sim_output.png">
- </div>
-
-</li>
+<li><strong>Boundary Cases</strong>: Min/max values, zero, overflow</li>
+<li><strong>Typical Cases</strong>: Normal operation scenarios</li>
+<li><strong>Edge Cases</strong>: Carry propagation, bit transitions</li>
+<li><strong>Random Testing</strong>: Cover unexpected combinations</li>
 </ol>
 <hr>
+<h2 id="design-best-practices"><a class="header" href="#design-best-practices">Design Best Practices</a></h2>
+<h3 id="dos-"><a class="header" href="#dos-">Do’s ✓</a></h3>
+<ul>
+<li>Use meaningful signal names</li>
+<li>Comment your code</li>
+<li>Initialize all signals in testbenches</li>
+<li>Use named port connections</li>
+<li>Separate combinational and sequential logic</li>
+<li>Use non-blocking (<code>&lt;=</code>) for sequential logic</li>
+</ul>
+<h3 id="donts-"><a class="header" href="#donts-">Don’ts ✗</a></h3>
+<ul>
+<li>Mix blocking and non-blocking in same always block</li>
+<li>Use <code>initial</code> blocks in synthesizable code</li>
+<li>Create combinational loops</li>
+<li>Leave signals undriven (floating)</li>
+<li>Use delays in synthesizable code</li>
+</ul>
+<hr>
+<h2 id="common-errors"><a class="header" href="#common-errors">Common Errors</a></h2>
+<h3 id="1-undriven-signal"><a class="header" href="#1-undriven-signal">1. Undriven Signal</a></h3>
+<pre><code class="language-verilog">wire result;        // Never assigned!
+assign y = result;  // y will be 'x'
+</code></pre>
+<h3 id="2-multiple-drivers"><a class="header" href="#2-multiple-drivers">2. Multiple Drivers</a></h3>
+<pre><code class="language-verilog">assign a = b;
+assign a = c;  // ERROR: Two drivers!
+</code></pre>
+<h3 id="3-sensitivity-list-issues"><a class="header" href="#3-sensitivity-list-issues">3. Sensitivity List Issues</a></h3>
+<pre><code class="language-verilog">// WRONG - incomplete sensitivity list
+always @(a)
+    y = a &amp; b;  // Won't update when b changes
+
+// CORRECT
+always @(*)
+    y = a &amp; b;
+</code></pre>
+<h3 id="4-latch-inference"><a class="header" href="#4-latch-inference">4. Latch Inference</a></h3>
+<pre><code class="language-verilog">// WRONG - creates unintended latch
+always @(*) begin
+    if (sel)
+        y = a;
+    // Missing else!
+end
+
+// CORRECT
+always @(*) begin
+    if (sel)
+        y = a;
+    else
+        y = b;  // Or: y = 0;
+end
+</code></pre>
+<hr>
+<h2 id="running-the-simulation"><a class="header" href="#running-the-simulation">Running the Simulation</a></h2>
+<pre><code class="language-bash"># Full build and run
+make
+
+# Step by step
+make compile   # Compile
+make run       # Simulate
+make wave      # View waveforms
+make clean     # Cleanup
+</code></pre>
+<p>Expected output shows:</p>
+<ol>
+<li>1-bit full adder truth table verification</li>
+<li>4-bit adder boundary tests</li>
+<li>Random pattern testing</li>
+<li>Pass/fail summary</li>
+</ol>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../digital_circuits/ripple_carry_adder.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../tutorials/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../digital_circuits/alu.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -244,11 +452,11 @@ The counter has a defined width <code>N</code>, which means that it can count ma
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../digital_circuits/ripple_carry_adder.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../tutorials/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../digital_circuits/alu.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
@@ -284,13 +492,13 @@ The counter has a defined width <code>N</code>, which means that it can count ma
         </script>
 
 
-        <script src="../elasticlunr-ef4e11c1.min.js"></script>
-        <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
 
-        <script src="../clipboard-1626706a.min.js"></script>
-        <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 

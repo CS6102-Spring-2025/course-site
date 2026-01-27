@@ -7,6 +7,7 @@ Updates are listed in **reverse chronological order**.
 
 | Date       | Type     | Update |
 |------------|----------|--------|
+| 28/01/2026 | Tutorial   | [Verilog Tutorial (Tutorial 1)](tutorials/1/index.html) added · [Download Files](tutorials/1/Tutorial1.tar.gz) |
 | 23/01/2026 | Slides   | [Lecture 06 (Finite Fields and Hardware)](slides/ISC_lec6.pdf) slides added |
 | 21/01/2026 | Installation | Installation guide for required software and tools added |
 | 21/01/2026 | Slides   | [Extended slides](slides/Lec_4_ext_Mapping_an_algorithm_to_hardware.pdf) for Lecture 05 added|

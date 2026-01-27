@@ -1,6 +1,8 @@
 # Implementation Security in Cryptography (CS6102)
 - [Overview](README.md)
 - [Installation](installation.md)
+- [Tutorials](tutorials/README.md)
+  - [Tutorial 1: Verilog Basics](tutorials/1/README.md)
 - [Assignments](assignments.md)
 - [Resources](resources.md)
   - [Verilog](verilog/README.md)
@@ -16,4 +18,3 @@
     - [Karatsuba Multiplier](./digital_circuits/karatsuba_multiplier.md)
     - [FIFO](./digital_circuits/fifo.md)
 - [Changelog](changelog.md)
-
