@@ -28,46 +28,21 @@
     ×
   </button>
 </div> -->
-<!-- Assignment 1 Announcement -->
-<div id="assignment1-notice"
-  style="
-    background-color:#111827;
-    border-left:6px solid #f59e0b;
-    color:#f9fafb;
-    padding:14px 18px;
-    margin:20px 0;
-    border-radius:6px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.4);
-    position:relative;
-  ">
-  <strong>📌 Assignment 1 Announcement</strong>
-  <div style="margin-top:4px;">
-    Submission deadline: <strong>20 February 2026</strong>. Submissions via <strong>Moodle</strong>.
-    <div style="margin-top:6px;">
-      <a href="/assignments.html"
-         style="color:#f59e0b; text-decoration:underline; font-size:0.9em;">
-        View assignment details
-      </a>
-    </div>
-  </div>
 
-  <button onclick="document.getElementById('assignment1-notice').style.display='none';"
-    style="
-      position:absolute;
-      top:10px;
-      right:14px;
-      background:none;
-      border:none;
-      color:#f59e0b;
-      font-size:20px;
-      cursor:pointer;
-    ">
-    ×
-  </button>
+<div id="assignment1-notice" style=" background-color:#111827; border-left:6px solid #f59e0b; color:#f9fafb; padding:14px 18px; margin:20px 0; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,0.4); position:relative; "> <strong>📌 Assignment 1 Announcement</strong> <div style="margin-top:4px;"> Submission deadline: <strong>20 February 2026</strong>. Submissions via <strong>Moodle</strong>. 
+
+<div style="margin-top:6px;">
+  <a href="/assignments.html" style="color:#f59e0b; text-decoration:underline; font-size:0.9em;">View assignment details</a>
+  &nbsp;|&nbsp;
+  <a href="https://forms.gle/kzjKPqYcJz2GAMXH8" style="color:#f59e0b; text-decoration:underline; font-size:0.9em;">
+    Group registration form (one member per group)
+  </a>
 </div>
 
 
-
+</div> 
+<button onclick="document.getElementById('assignment1-notice').style.display='none';" style=" position:absolute; top:10px; right:14px; background:none; border:none; color:#f59e0b; font-size:20px; cursor:pointer; "> × </button>
+ </div>
 
 
 # Implementation Security in Cryptography
