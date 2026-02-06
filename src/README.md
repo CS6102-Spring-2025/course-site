@@ -116,7 +116,7 @@ The detailed course outline and reference material are available on the
 | Jan 23 | Finite Fields and Hardware | — | [Lecture 06](slides/ISC_lec6.pdf) | [Video](https://youtu.be/jbZetkHINS4) | — |
 | Jan 28 | Verilog Tutorial (Tutorial 1) | — | [Tutorial 1](slides/Tutorial1.pdf) | — | · [Tutorial Tab](tutorials/1/index.html) <br> · [Download Files](tutorials/1/Tutorial1.tar.gz)|
 | Jan 30 | Galois Fields and AES Introduction | — | — | [Video](https://youtu.be/NOIWtU-vDgc) | — |
-
+| Feb 04 | Field Operations over Hardware | — | — | [Video](https://youtu.be/RY41eaS_R0I) | — |
 
 ---
 ## Grading Policy (Tentative)
