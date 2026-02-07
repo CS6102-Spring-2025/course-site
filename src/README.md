@@ -115,8 +115,9 @@ The detailed course outline and reference material are available on the
 | Jan 21 | Sequential Circuits & Hardware Mapping | Lecture 4 | Lecture 4 slides + [extended slides](slides/Lec_4_ext_Mapping_an_algorithm_to_hardware.pdf) | [Video](https://youtu.be/9eYv7Vz8c3U) | [Switching and Finite Automata Theory](https://www.google.co.in/books/edition/Switching_and_Finite_Automata_Theory/Qv0LBAAAQBAJ?hl=en&gbpv=1&pg=PP1&printsec=frontcover) |
 | Jan 23 | Finite Fields and Hardware | — | [Lecture 06](slides/ISC_lec6.pdf) | [Video](https://youtu.be/jbZetkHINS4) | — |
 | Jan 28 | Verilog Tutorial (Tutorial 1) | — | [Tutorial 1](slides/Tutorial1.pdf) | — | · [Tutorial Tab](tutorials/1/index.html) <br> · [Download Files](tutorials/1/Tutorial1.tar.gz)|
-| Jan 30 | Galois Fields and AES Introduction | — | — | [Video](https://youtu.be/NOIWtU-vDgc) | — |
-| Feb 04 | Field Operations over Hardware | — | — | [Video](https://youtu.be/RY41eaS_R0I) | — |
+| Jan 30 | Galois Fields and AES Introduction | — | [Lecture 07](slides/ISC_lec7.pdf) | [Video](https://youtu.be/NOIWtU-vDgc) | — |
+| Feb 04 | Field Operations over Hardware | — | [Lecture 08](slides/ISC_lec8.pdf) | [Video](https://youtu.be/RY41eaS_R0I) | — |
+| Feb 06 | Extension Fields Isomorphism | — | [Lecture 09-10](slides/ISC_lec9_10.pdf) | [Video](https://youtu.be/ZzNfmcmB6hE) | — |
 
 ---
 ## Grading Policy (Tentative)
