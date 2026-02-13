@@ -118,6 +118,8 @@ The detailed course outline and reference material are available on the
 | Jan 30 | Galois Fields and AES Introduction | — | [Lecture 07](slides/ISC_lec7.pdf) | [Video](https://youtu.be/NOIWtU-vDgc) | — |
 | Feb 04 | Field Operations over Hardware | — | [Lecture 08](slides/ISC_lec8.pdf) | [Video](https://youtu.be/RY41eaS_R0I) | — |
 | Feb 06 | Extension Fields Isomorphism | — | [Lecture 09-10](slides/ISC_lec9_10.pdf) | [Video](https://youtu.be/ZzNfmcmB6hE) | — |
+| Feb 11 | Quiz - I | — | [Quiz-I_solutions](slides/quiz1.pdf) | — | — |
+| Feb 13 | Extension Fields Isomorphism contd. | — | [Lecture 09-10](slides/ISC_lec9_10.pdf) | [Video](https://youtu.be/n1CdWUEP5EI) | — |
 
 ---
 ## Grading Policy (Tentative)
