@@ -118,7 +118,7 @@ The detailed course outline and reference material are available on the
 | Feb 11 | Quiz - I | — | [Quiz-I_solutions](slides/quiz1.pdf) | — | — |
 | Feb 13 | Extension Fields Isomorphism contd. | — | [Lecture 09-10](slides/ISC_lec9_10.pdf) | [Video](https://youtu.be/n1CdWUEP5EI) | — |
 | Feb 18 | Optimizing Field Operations over GF(2^8) | — | [Lecture 11](slides/ISC_lec11.pdf) | [Video](https://youtu.be/8WLgI_jCyq8) | — |
-| Feb 20 | Efficiency and Security of Different AES Implementations | — | — | [Video](https://youtu.be/HdySXxsn7oM) | — |
+| Feb 20 | Efficiency and Security of Different AES Implementations | — | — | [Video](https://youtu.be/HdySXxsn7oM) | [Sage File](slides/gftest_2_backup.sage) |
 
 ---
 ## Grading Policy (Tentative)
