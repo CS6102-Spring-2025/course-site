@@ -29,17 +29,13 @@
   </button>
 </div> -->
 
-<div id="assignment1-notice" style=" background-color:#111827; border-left:6px solid #f59e0b; color:#f9fafb; padding:14px 18px; margin:20px 0; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,0.4); position:relative; "> <strong>📌 Assignment 1 Announcement</strong> <div style="margin-top:4px;"> Submission deadline: <strong>20 February 2026</strong>. Submissions via <strong>Moodle</strong>. 
+<div id="assignment1-notice" style=" background-color:#111827; border-left:6px solid #f59e0b; color:#f9fafb; padding:14px 18px; margin:20px 0; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,0.4); position:relative; "> <strong>📌 Midsem Examination Announcement</strong> <div style="margin-top:4px;"> <strong>Date : </strong>Thursday, 26/02/2026<strong><br>Time : </strong>11:00 - 13:00<strong><br>Room : </strong>CC103
 
-<div style="margin-top:6px;">
+<!-- <div style="margin-top:6px;">
   <a href="assignments.md" style="color:#f59e0b; text-decoration:underline; font-size:0.9em;">View assignment details</a>
   &nbsp;
-  <!-- |&nbsp; -->
-  <!-- <a href="https://forms.gle/kzjKPqYcJz2GAMXH8" style="color:#f59e0b; text-decoration:underline; font-size:0.9em;">
-    Group registration form (one member per group)
-  </a> -->
 </div>
-
+ -->
 
 </div> 
 <button onclick="document.getElementById('assignment1-notice').style.display='none';" style=" position:absolute; top:10px; right:14px; background:none; border:none; color:#f59e0b; font-size:20px; cursor:pointer; "> × </button>
@@ -121,6 +117,8 @@ The detailed course outline and reference material are available on the
 | Feb 06 | Extension Fields Isomorphism | — | [Lecture 09-10](slides/ISC_lec9_10.pdf) | [Video](https://youtu.be/ZzNfmcmB6hE) | — |
 | Feb 11 | Quiz - I | — | [Quiz-I_solutions](slides/quiz1.pdf) | — | — |
 | Feb 13 | Extension Fields Isomorphism contd. | — | [Lecture 09-10](slides/ISC_lec9_10.pdf) | [Video](https://youtu.be/n1CdWUEP5EI) | — |
+| Feb 18 | Optimizing Field Operations over GF(2^8) | — | [Lecture 11](slides/ISC_lec11.pdf) | [Video](https://youtu.be/8WLgI_jCyq8) | — |
+| Feb 20 | Efficiency and Security of Different AES Implementations | — | — | [Video](https://youtu.be/HdySXxsn7oM) | — |
 
 ---
 ## Grading Policy (Tentative)
