@@ -119,7 +119,12 @@ The detailed course outline and reference material are available on the
 | Feb 13 | Extension Fields Isomorphism contd. | — | [Lecture 09-10](slides/ISC_lec9_10.pdf) | [Video](https://youtu.be/n1CdWUEP5EI) | — |
 | Feb 18 | Optimizing Field Operations over GF(2^8) | — | [Lecture 11](slides/ISC_lec11.pdf) | [Video](https://youtu.be/8WLgI_jCyq8) | — |
 | Feb 20 | Efficiency and Security of Different AES Implementations | — | — | [Video](https://youtu.be/HdySXxsn7oM) | [Sage File](slides/gftest_2_backup.sage) |
-| Mar 13 | Entering the World of Attacks (DPA, SCA, DOM, Statistical Analysis, CPA, SNR)| — | [Consolidated Slides (from L11)](slides/ISC_lec_SCA_All.pdf) | — | — |
+| Mar 04 | Efficient AES Mix-Column \| Bitslicing | — | — | [Video](https://youtu.be/GxZGbbu5riQ?si=QUzw4s_AIaMOv-Rf) | — |
+| Mar 06 | Side Channel Attack on AES | — | — | [Video](https://youtu.be/VCTBZjuwtAA?si=ECV7EXj213qyQFCf) | — |
+| Mar 11 | Statistical Analysis of Differential Power Attacks | — | — | [Video](https://youtu.be/knfeSXgAZ2w?si=9QdGFjKsWMqS3gkX) | — |
+| Mar 13 | Statistics Behind Difference of Mean Attack | — | [Consolidated Slides (from L11 - L16)](slides/ISC_lec_SCA_All.pdf) | [Video](https://youtu.be/4EHChQO22Vg?si=On1bIXiXhLvUh-Q0) | — |
+| Mar 18 | Statistics Behind Correlation Power Attack | — | — | [Video](https://youtu.be/mMfjiymml60?si=G3YEyJb1m5U_bA0e) | — |
+| Mar 20 | Statistics Behind Template Attacks, Modelling Noise | — | — | [Video](https://youtu.be/uLefnH6U-2Q?si=xfnQcpu3QEkF_wCN) | — |
 
 ---
 ## Grading Policy (Tentative)
