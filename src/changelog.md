@@ -7,6 +7,7 @@ Updates are listed in **reverse chronological order**.
 
 | Date       | Type     | Update |
 |------------|----------|--------|
+|01/04/2026 | Slides    | [Lecture 19 - 20](slides/ISC_lec_masking.pdf) slides and [Lecture 21](slides/ISC_lec_Faults_1.pdf) slides added |
 | 13/03/2026 | Slides     | [Consolidates all lectures slide](slides/ISC_lec_SCA_All.pdf) since L11, covering DPA, SCA, DOM, Statistical Analysis, CPA, SNR |
 | 23/02/2026 | Slides     | [Lecture 11](slides/ISC_lec11.pdf) slides added |
 | 07/02/2026 | Slides     | [Lecture 07](slides/ISC_lec7.pdf), [Lecture 08](slides/ISC_lec8.pdf), and [Lecture 09-10](slides/ISC_lec9_10.pdf) slides added |

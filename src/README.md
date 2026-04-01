@@ -122,10 +122,12 @@ The detailed course outline and reference material are available on the
 | Mar 04 | Efficient AES Mix-Column \| Bitslicing | — | — | [Video](https://youtu.be/GxZGbbu5riQ?si=QUzw4s_AIaMOv-Rf) | — |
 | Mar 06 | Side Channel Attack on AES | — | — | [Video](https://youtu.be/VCTBZjuwtAA?si=ECV7EXj213qyQFCf) | — |
 | Mar 11 | Statistical Analysis of Differential Power Attacks | — | — | [Video](https://youtu.be/knfeSXgAZ2w?si=9QdGFjKsWMqS3gkX) | — |
-| Mar 13 | Statistics Behind Difference of Mean Attack | — | [Consolidated Slides (from L11 - L16)](slides/ISC_lec_SCA_All.pdf) | [Video](https://youtu.be/4EHChQO22Vg?si=On1bIXiXhLvUh-Q0) | — |
+| Mar 13 | Statistics Behind Difference of Mean Attack | — | — | [Video](https://youtu.be/4EHChQO22Vg?si=On1bIXiXhLvUh-Q0) | — |
 | Mar 18 | Statistics Behind Correlation Power Attack | — | — | [Video](https://youtu.be/mMfjiymml60?si=G3YEyJb1m5U_bA0e) | — |
-| Mar 20 | Statistics Behind Template Attacks, Modelling Noise | — | — | [Video](https://youtu.be/uLefnH6U-2Q?si=xfnQcpu3QEkF_wCN) | — |
-
+| Mar 20 | Statistics Behind Template Attacks, Modelling Noise | — | [Consolidated Slides (from L11 - L18)](slides/ISC_lec_SCA_All.pdf) | [Video](https://youtu.be/uLefnH6U-2Q?si=xfnQcpu3QEkF_wCN) | — |
+| Mar 25 | SCA Countermeasures | — | [Lecture 19](slides/ISC_lec_masking.pdf) | — | — |
+| Mar 27 | SCA Countermeasures contd. | — | [Lecture 20](slides/ISC_lec_masking.pdf) | — | — |
+| Apr 01 | Fault Attacks | — | [Lecture 21](slides/ISC_lec_Faults_1.pdf) | — | — |
 ---
 ## Grading Policy (Tentative)
 
