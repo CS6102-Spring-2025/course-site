@@ -1,4 +1,4 @@
-<!-- <div id="tutorial-jan28-notice"
+<div id="tutorial-jan28-notice"
   style="
     background-color:#111827;
     border-left:6px solid #f59e0b;
@@ -9,9 +9,13 @@
     box-shadow:0 4px 12px rgba(0,0,0,0.4);
     position:relative;
   ">
-  <strong>📌 Tutorial Announcement</strong>
+  <strong>📌 Quiz 2</strong>
   <div style="margin-top:4px;">
-    <strong>Jan 28 (Tuesday): Tutorial class — Mandatory attendance</strong>
+    <strong>
+      Date: April 8 (Wednesday)<br>
+      Time: 11:00 a.m. – 12:30 p.m.<br>
+      Venue: CC101
+    </strong>
   </div>
 
   <button onclick="document.getElementById('tutorial-jan28-notice').style.display='none';"
@@ -27,7 +31,7 @@
     ">
     ×
   </button>
-</div> -->
+</div>
 
 <!-- <div id="assignment1-notice" style=" background-color:#111827; border-left:6px solid #f59e0b; color:#f9fafb; padding:14px 18px; margin:20px 0; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,0.4); position:relative; "> <strong>📌 Midsem Examination Announcement</strong> <div style="margin-top:4px;"> <strong>Date : </strong>Thursday, 26/02/2026<strong><br>Time : </strong>11:00 - 13:00<strong><br>Room : </strong>CC103 -->
 
@@ -125,9 +129,9 @@ The detailed course outline and reference material are available on the
 | Mar 13 | Statistics Behind Difference of Mean Attack | — | — | [Video](https://youtu.be/4EHChQO22Vg?si=On1bIXiXhLvUh-Q0) | — |
 | Mar 18 | Statistics Behind Correlation Power Attack | — | — | [Video](https://youtu.be/mMfjiymml60?si=G3YEyJb1m5U_bA0e) | — |
 | Mar 20 | Statistics Behind Template Attacks, Modelling Noise | — | [Consolidated Slides (from L11 - L18)](slides/ISC_lec_SCA_All.pdf) | [Video](https://youtu.be/uLefnH6U-2Q?si=xfnQcpu3QEkF_wCN) | — |
-| Mar 25 | SCA Countermeasures | — | [Lecture 19](slides/ISC_lec_masking.pdf) | — | — |
-| Mar 27 | SCA Countermeasures contd. | — | [Lecture 20](slides/ISC_lec_masking.pdf) | — | — |
-| Apr 01 | Fault Attacks | — | [Lecture 21](slides/ISC_lec_Faults_1.pdf) | — | — |
+| Mar 25 | SCA Countermeasures | — | [Lecture 19](slides/ISC_lec_masking.pdf) | [Video](https://youtu.be/XhD0G-iJmls?si=JOKiUufzOUJZqztf) | — |
+| Mar 27 | SCA Countermeasures contd. | — | [Lecture 20](slides/ISC_lec_masking.pdf) | [Video](https://youtu.be/KovN1_de15I?si=U-NXDzuxRpcqYbBa) | [Video (CPA Attack Demo on AES)](https://youtu.be/yqk-KRKK1xM?si=KirTfrF4dkLbRAgX) |
+| Apr 01 | Fault Attacks | — | [Lecture 21](slides/ISC_lec_Faults_1.pdf) | [Video](https://youtu.be/q3zRRKJLLas?si=TFJiKmWkykxUmskD) | — |
 ---
 ## Grading Policy (Tentative)
 
