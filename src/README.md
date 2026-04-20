@@ -9,12 +9,12 @@
     box-shadow:0 4px 12px rgba(0,0,0,0.4);
     position:relative;
   ">
-  <strong>📌 Quiz 2</strong>
+  <strong>📌 Endsem</strong>
   <div style="margin-top:4px;">
     <strong>
-      Date: April 8 (Wednesday)<br>
-      Time: 11:00 a.m. – 12:30 p.m.<br>
-      Venue: CC101
+      Date: April 29 (Wednesday)<br>
+      Time: 13:00 – 16:00<br>
+      Venue: LH301 (Red)
     </strong>
   </div>
 
@@ -131,14 +131,16 @@ The detailed course outline and reference material are available on the
 | Mar 20 | Statistics Behind Template Attacks, Modelling Noise | — | [Consolidated Slides (from L11 - L18)](slides/ISC_lec_SCA_All.pdf) | [Video](https://youtu.be/uLefnH6U-2Q?si=xfnQcpu3QEkF_wCN) | — |
 | Mar 25 | SCA Countermeasures | — | [Lecture 19](slides/ISC_lec_masking.pdf) | [Video](https://youtu.be/XhD0G-iJmls?si=JOKiUufzOUJZqztf) | — |
 | Mar 27 | SCA Countermeasures contd. | — | [Lecture 20](slides/ISC_lec_masking.pdf) | [Video](https://youtu.be/KovN1_de15I?si=U-NXDzuxRpcqYbBa) | [Video (CPA Attack Demo on AES)](https://youtu.be/yqk-KRKK1xM?si=KirTfrF4dkLbRAgX) |
-| Apr 01 | Fault Attacks | — | [Lecture 21](slides/ISC_lec_Faults_1.pdf) | [Video](https://youtu.be/q3zRRKJLLas?si=TFJiKmWkykxUmskD) | — |
+| Apr 01 | Fault Attacks | — | — | [Video](https://youtu.be/q3zRRKJLLas?si=TFJiKmWkykxUmskD) | — |
+| Apr 10 | Fault Attacks | — | — | — | — |
+| Apr 17 | Fault Attacks | — | [Consolidated Slides (from L21 - L23)](slides/ISC_lec_Faults_3.pdf) | — | — |
 ---
 ## Grading Policy (Tentative)
 
 | Component                                  | Weight | Notes |
 |--------------------------------------------|--------|-------|
-| Programming Assignments                     | 30%    | Best 2 out of 3 assignments will be considered |
-| Quizzes                                     | 30%    | - |
+| Programming Assignments                     | 30%    | 2 assignments |
+| Quizzes                                     | 30%    | 2 quizzes |
 | Mid-Semester and End-Semester Examinations | 40%    | - |
 
 
